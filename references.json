@@ -1,432 +1,413 @@
 [
   {
-    "publisher": "The Royal Society",
-    "issue": "141",
-    "abstract": "<jats:p>Deep learning describes a class of machine learning algorithms that are capable of combining raw inputs into layers of intermediate features. These algorithms have recently shown impressive results across a variety of domains. Biology and medicine are data-rich disciplines, but the data are complex and often ill-understood. Hence, deep learning techniques may be particularly well suited to solve problems of these fields. We examine applications of deep learning to a variety of biomedical problems—patient classification, fundamental biological processes and treatment of patients—and discuss whether deep learning will be able to transform these tasks or if the biomedical sphere poses unique challenges. Following from an extensive literature review, we find that deep learning has yet to revolutionize biomedicine or definitively resolve any of the most pressing challenges in the field, but promising advances have been made on the prior state of the art. Even though improvements over previous baselines have been modest in general, the recent progress indicates that deep learning methods will provide valuable means for speeding up or aiding human investigation. Though progress has been made linking a specific neural network's prediction to input features, understanding how users should interpret these models to make testable hypotheses about the system under study remains an open challenge. Furthermore, the limited amount of labelled data for training presents problems in some domains, as do legal and privacy constraints on work with sensitive health records. Nonetheless, we foresee deep learning enabling changes at both bench and bedside with the potential to transform several areas of biology and medicine.</jats:p>",
-    "DOI": "10.1098/rsif.2017.0387",
+    "publisher": "Elsevier BV",
+    "DOI": "10.1016/s0960-9776(09)70290-5",
     "type": "article-journal",
-    "page": "20170387",
+    "page": "S141-S145",
     "source": "Crossref",
-    "title": "Opportunities and obstacles for deep learning in biology and medicine",
-    "volume": "15",
+    "title": "Prediction of adjuvant chemotherapy benefit in endocrine responsive, early breast cancer using multigene assays",
+    "volume": "18",
     "author": [
       {
-        "given": "Travers",
-        "family": "Ching"
+        "given": "Kathy S.",
+        "family": "Albain"
       },
       {
-        "given": "Daniel S.",
-        "family": "Himmelstein"
+        "given": "Soonmyung",
+        "family": "Paik"
       },
       {
-        "given": "Brett K.",
-        "family": "Beaulieu-Jones"
-      },
-      {
-        "given": "Alexandr A.",
-        "family": "Kalinin"
-      },
-      {
-        "given": "Brian T.",
-        "family": "Do"
-      },
-      {
-        "given": "Gregory P.",
-        "family": "Way"
-      },
-      {
-        "given": "Enrico",
-        "family": "Ferrero"
-      },
-      {
-        "given": "Paul-Michael",
-        "family": "Agapow"
-      },
-      {
-        "given": "Michael",
-        "family": "Zietz"
-      },
-      {
-        "given": "Michael M.",
-        "family": "Hoffman"
-      },
-      {
-        "given": "Wei",
-        "family": "Xie"
-      },
-      {
-        "given": "Gail L.",
-        "family": "Rosen"
-      },
-      {
-        "given": "Benjamin J.",
-        "family": "Lengerich"
-      },
-      {
-        "given": "Johnny",
-        "family": "Israeli"
-      },
-      {
-        "given": "Jack",
-        "family": "Lanchantin"
-      },
-      {
-        "given": "Stephen",
-        "family": "Woloszynek"
-      },
-      {
-        "given": "Anne E.",
-        "family": "Carpenter"
-      },
-      {
-        "given": "Avanti",
-        "family": "Shrikumar"
-      },
-      {
-        "given": "Jinbo",
-        "family": "Xu"
-      },
-      {
-        "given": "Evan M.",
-        "family": "Cofer"
-      },
-      {
-        "given": "Christopher A.",
-        "family": "Lavender"
-      },
-      {
-        "given": "Srinivas C.",
-        "family": "Turaga"
-      },
-      {
-        "given": "Amr M.",
-        "family": "Alexandari"
-      },
-      {
-        "given": "Zhiyong",
-        "family": "Lu"
-      },
-      {
-        "given": "David J.",
-        "family": "Harris"
-      },
-      {
-        "given": "Dave",
-        "family": "DeCaprio"
-      },
-      {
-        "given": "Yanjun",
-        "family": "Qi"
-      },
-      {
-        "given": "Anshul",
-        "family": "Kundaje"
-      },
-      {
-        "given": "Yifan",
-        "family": "Peng"
-      },
-      {
-        "given": "Laura K.",
-        "family": "Wiley"
-      },
-      {
-        "given": "Marwin H. S.",
-        "family": "Segler"
-      },
-      {
-        "given": "Simina M.",
-        "family": "Boca"
-      },
-      {
-        "given": "S. Joshua",
-        "family": "Swamidass"
-      },
-      {
-        "given": "Austin",
-        "family": "Huang"
-      },
-      {
-        "given": "Anthony",
-        "family": "Gitter"
-      },
-      {
-        "given": "Casey S.",
-        "family": "Greene"
+        "given": "Laura",
+        "family": "van't Veer"
       }
     ],
-    "container-title": "Journal of The Royal Society Interface",
+    "container-title": "The Breast",
     "language": "en",
     "issued": {
       "date-parts": [
         [
-          2018,
-          4
+          2009,
+          10
         ]
       ]
     },
-    "URL": "https://doi.org/gddkhn",
-    "container-title-short": "J. R. Soc. Interface.",
-    "PMCID": "PMC5938574",
-    "PMID": "29618526",
-    "id": "PZMP42Ak",
-    "note": "This CSL Item was generated by Manubot v0.5.5 from its persistent identifier (standard_id).\nstandard_id: doi:10.1098/rsif.2017.0387"
+    "URL": "https://doi.org/bp4rtw",
+    "container-title-short": "The Breast",
+    "PMID": "19914534",
+    "id": "OW5P00JC",
+    "note": "This CSL Item was generated by Manubot v0.5.5 from its persistent identifier (standard_id).\nstandard_id: doi:10.1016/s0960-9776(09)70290-5"
   },
   {
-    "publisher": "Public Library of Science (PLoS)",
-    "issue": "6",
-    "DOI": "10.1371/journal.pcbi.1007128",
+    "publisher": "Oxford University Press (OUP)",
+    "issue": "11",
+    "abstract": "<jats:title>Abstract</jats:title><jats:sec><jats:title>Background</jats:title><jats:p>Assigning every human gene to specific functions, diseases and traits is a grand challenge in modern genetics. Key to addressing this challenge are computational methods, such as supervised learning and label propagation, that can leverage molecular interaction networks to predict gene attributes. In spite of being a popular machine-learning technique across fields, supervised learning has been applied only in a few network-based studies for predicting pathway-, phenotype- or disease-associated genes. It is unknown how supervised learning broadly performs across different networks and diverse gene classification tasks, and how it compares to label propagation, the widely benchmarked canonical approach for this problem.</jats:p></jats:sec><jats:sec><jats:title>Results</jats:title><jats:p>In this study, we present a comprehensive benchmarking of supervised learning for network-based gene classification, evaluating this approach and a classic label propagation technique on hundreds of diverse prediction tasks and multiple networks using stringent evaluation schemes. We demonstrate that supervised learning on a gene’s full network connectivity outperforms label propagaton and achieves high prediction accuracy by efficiently capturing local network properties, rivaling label propagation’s appeal for naturally using network topology. We further show that supervised learning on the full network is also superior to learning on node embeddings (derived using node2vec), an increasingly popular approach for concisely representing network connectivity. These results show that supervised learning is an accurate approach for prioritizing genes associated with diverse functions, diseases and traits and should be considered a staple of network-based gene classification workflows.</jats:p></jats:sec><jats:sec><jats:title>Availability and implementation</jats:title><jats:p>The datasets and the code used to reproduce the results and add new gene classification methods have been made freely available.</jats:p></jats:sec><jats:sec><jats:title>Contact</jats:title><jats:p>arjun@msu.edu</jats:p></jats:sec><jats:sec><jats:title>Supplementary information</jats:title><jats:p>Supplementary data are available at Bioinformatics online.</jats:p></jats:sec>",
+    "DOI": "10.1093/bioinformatics/btaa150",
     "type": "article-journal",
-    "page": "e1007128",
+    "page": "3457-3465",
     "source": "Crossref",
-    "title": "Open collaborative writing with Manubot",
-    "volume": "15",
+    "title": "Supervised learning is an accurate method for network-based gene classification",
+    "volume": "36",
     "author": [
       {
-        "given": "Daniel S.",
-        "family": "Himmelstein"
+        "given": "Renming",
+        "family": "Liu"
       },
       {
-        "given": "Vincent",
-        "family": "Rubinetti"
+        "given": "Christopher A",
+        "family": "Mancuso"
       },
       {
-        "given": "David R.",
-        "family": "Slochower"
+        "given": "Anna",
+        "family": "Yannakopoulos"
       },
       {
-        "given": "Dongbo",
+        "given": "Kayla A",
+        "family": "Johnson"
+      },
+      {
+        "given": "Arjun",
+        "family": "Krishnan"
+      }
+    ],
+    "container-title": "Bioinformatics",
+    "language": "en",
+    "editor": [
+      {
+        "given": "Zhiyong",
+        "family": "Lu"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2020,
+          4,
+          14
+        ]
+      ]
+    },
+    "URL": "https://doi.org/gmvnfc",
+    "PMCID": "PMC7267831",
+    "PMID": "32129827",
+    "id": "bOvwnoRq",
+    "note": "This CSL Item was generated by Manubot v0.5.5 from its persistent identifier (standard_id).\nstandard_id: doi:10.1093/bioinformatics/btaa150"
+  },
+  {
+    "publisher": "American Association for the Advancement of Science (AAAS)",
+    "issue": "6127",
+    "DOI": "10.1126/science.1235122",
+    "type": "article-journal",
+    "page": "1546-1558",
+    "source": "Crossref",
+    "title": "Cancer Genome Landscapes",
+    "volume": "339",
+    "author": [
+      {
+        "given": "B.",
+        "family": "Vogelstein"
+      },
+      {
+        "given": "N.",
+        "family": "Papadopoulos"
+      },
+      {
+        "given": "V. E.",
+        "family": "Velculescu"
+      },
+      {
+        "given": "S.",
+        "family": "Zhou"
+      },
+      {
+        "given": "L. A.",
+        "family": "Diaz"
+      },
+      {
+        "given": "K. W.",
+        "family": "Kinzler"
+      }
+    ],
+    "container-title": "Science",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          2013,
+          3,
+          28
+        ]
+      ]
+    },
+    "URL": "https://doi.org/6rg",
+    "container-title-short": "Science",
+    "PMCID": "PMC3749880",
+    "PMID": "23539594",
+    "id": "809OyWlC",
+    "note": "This CSL Item was generated by Manubot v0.5.5 from its persistent identifier (standard_id).\nstandard_id: doi:10.1126/science.1235122"
+  },
+  {
+    "publisher": "American Society of Clinical Oncology (ASCO)",
+    "issue": "8",
+    "abstract": "<jats:sec><jats:title>Purpose</jats:title><jats:p> To improve on current standards for breast cancer prognosis and prediction of chemotherapy benefit by developing a risk model that incorporates the gene expression–based “intrinsic” subtypes luminal A, luminal B, HER2-enriched, and basal-like. </jats:p></jats:sec><jats:sec><jats:title>Methods</jats:title><jats:p> A 50-gene subtype predictor was developed using microarray and quantitative reverse transcriptase polymerase chain reaction data from 189 prototype samples. Test sets from 761 patients (no systemic therapy) were evaluated for prognosis, and 133 patients were evaluated for prediction of pathologic complete response (pCR) to a taxane and anthracycline regimen. </jats:p></jats:sec><jats:sec><jats:title>Results</jats:title><jats:p> The intrinsic subtypes as discrete entities showed prognostic significance (P = 2.26E-12) and remained significant in multivariable analyses that incorporated standard parameters (estrogen receptor status, histologic grade, tumor size, and node status). A prognostic model for node-negative breast cancer was built using intrinsic subtype and clinical information. The C-index estimate for the combined model (subtype and tumor size) was a significant improvement on either the clinicopathologic model or subtype model alone. The intrinsic subtype model predicted neoadjuvant chemotherapy efficacy with a negative predictive value for pCR of 97%. </jats:p></jats:sec><jats:sec><jats:title>Conclusion</jats:title><jats:p> Diagnosis by intrinsic subtype adds significant prognostic and predictive information to standard parameters for patients with breast cancer. The prognostic properties of the continuous risk score will be of value for the management of node-negative breast cancers. The subtypes and risk score can also be used to assess the likelihood of efficacy from neoadjuvant chemotherapy. </jats:p></jats:sec>",
+    "DOI": "10.1200/jco.2008.18.1370",
+    "type": "article-journal",
+    "page": "1160-1167",
+    "source": "Crossref",
+    "title": "Supervised Risk Predictor of Breast Cancer Based on Intrinsic Subtypes",
+    "volume": "27",
+    "author": [
+      {
+        "given": "Joel S.",
+        "family": "Parker"
+      },
+      {
+        "given": "Michael",
+        "family": "Mullins"
+      },
+      {
+        "given": "Maggie C.U.",
+        "family": "Cheang"
+      },
+      {
+        "given": "Samuel",
+        "family": "Leung"
+      },
+      {
+        "given": "David",
+        "family": "Voduc"
+      },
+      {
+        "given": "Tammi",
+        "family": "Vickery"
+      },
+      {
+        "given": "Sherri",
+        "family": "Davies"
+      },
+      {
+        "given": "Christiane",
+        "family": "Fauron"
+      },
+      {
+        "given": "Xiaping",
+        "family": "He"
+      },
+      {
+        "given": "Zhiyuan",
         "family": "Hu"
       },
       {
-        "given": "Venkat S.",
-        "family": "Malladi"
+        "given": "John F.",
+        "family": "Quackenbush"
       },
       {
-        "given": "Casey S.",
-        "family": "Greene"
+        "given": "Inge J.",
+        "family": "Stijleman"
       },
       {
-        "given": "Anthony",
-        "family": "Gitter"
+        "given": "Juan",
+        "family": "Palazzo"
+      },
+      {
+        "given": "J.S.",
+        "family": "Marron"
+      },
+      {
+        "given": "Andrew B.",
+        "family": "Nobel"
+      },
+      {
+        "given": "Elaine",
+        "family": "Mardis"
+      },
+      {
+        "given": "Torsten O.",
+        "family": "Nielsen"
+      },
+      {
+        "given": "Matthew J.",
+        "family": "Ellis"
+      },
+      {
+        "given": "Charles M.",
+        "family": "Perou"
+      },
+      {
+        "given": "Philip S.",
+        "family": "Bernard"
+      }
+    ],
+    "container-title": "Journal of Clinical Oncology",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          2009,
+          3,
+          10
+        ]
+      ]
+    },
+    "URL": "https://doi.org/c2688w",
+    "container-title-short": "JCO",
+    "PMCID": "PMC2667820",
+    "PMID": "19204204",
+    "id": "lnK82Ey6",
+    "note": "This CSL Item was generated by Manubot v0.5.5 from its persistent identifier (standard_id).\nstandard_id: doi:10.1200/jco.2008.18.1370"
+  },
+  {
+    "publisher": "Public Library of Science (PLoS)",
+    "issue": "3",
+    "abstract": "<jats:p>By classifying patients into subgroups, clinicians can provide more effective care than using a uniform approach for all patients. Such subgroups might include patients with a particular disease subtype, patients with a good (or poor) prognosis, or patients most (or least) likely to respond to a particular therapy. Transcriptomic measurements reflect the downstream effects of genomic and epigenomic variations. However, high-throughput technologies generate thousands of measurements per patient, and complex dependencies exist among genes, so it may be infeasible to classify patients using traditional statistical models. Machine-learning classification algorithms can help with this problem. However, hundreds of classification algorithms exist—and most support diverse hyperparameters—so it is difficult for researchers to know which are optimal for gene-expression biomarkers. We performed a benchmark comparison, applying 52 classification algorithms to 50 gene-expression datasets (143 class variables). We evaluated algorithms that represent diverse machine-learning methodologies and have been implemented in general-purpose, open-source, machine-learning libraries. When available, we combined clinical predictors with gene-expression data. Additionally, we evaluated the effects of performing hyperparameter optimization and feature selection using nested cross validation. Kernel- and ensemble-based algorithms consistently outperformed other types of classification algorithms; however, even the top-performing algorithms performed poorly in some cases. Hyperparameter optimization and feature selection typically improved predictive performance, and univariate feature-selection algorithms typically outperformed more sophisticated methods. Together, our findings illustrate that algorithm performance varies considerably when other factors are held constant and thus that algorithm selection is a critical step in biomarker studies.</jats:p>",
+    "DOI": "10.1371/journal.pcbi.1009926",
+    "type": "article-journal",
+    "page": "e1009926",
+    "source": "Crossref",
+    "title": "The ability to classify patients based on gene-expression data varies by algorithm and performance metric",
+    "volume": "18",
+    "author": [
+      {
+        "given": "Stephen R.",
+        "family": "Piccolo"
+      },
+      {
+        "given": "Avery",
+        "family": "Mecham"
+      },
+      {
+        "given": "Nathan P.",
+        "family": "Golightly"
+      },
+      {
+        "given": "Jérémie L.",
+        "family": "Johnson"
+      },
+      {
+        "given": "Dustin B.",
+        "family": "Miller"
       }
     ],
     "container-title": "PLOS Computational Biology",
     "language": "en",
     "editor": [
       {
-        "given": "Dina",
-        "family": "Schneidman-Duhovny"
+        "given": "Xing",
+        "family": "Chen"
       }
     ],
     "issued": {
       "date-parts": [
         [
-          2019,
-          6,
-          24
-        ]
-      ]
-    },
-    "URL": "https://doi.org/c7np",
-    "container-title-short": "PLoS Comput Biol",
-    "PMCID": "PMC6611653",
-    "PMID": "31233491",
-    "id": "YuJbg3zO",
-    "note": "This CSL Item was generated by Manubot v0.5.5 from its persistent identifier (standard_id).\nstandard_id: doi:10.1371/journal.pcbi.1007128"
-  },
-  {
-    "publisher": "eLife Sciences Publications, Ltd",
-    "abstract": "<jats:p>The website Sci-Hub enables users to download PDF versions of scholarly articles, including many articles that are paywalled at their journal’s site. Sci-Hub has grown rapidly since its creation in 2011, but the extent of its coverage has been unclear. Here we report that, as of March 2017, Sci-Hub’s database contains 68.9% of the 81.6 million scholarly articles registered with Crossref and 85.1% of articles published in toll access journals. We find that coverage varies by discipline and publisher, and that Sci-Hub preferentially covers popular, paywalled content. For toll access articles, we find that Sci-Hub provides greater coverage than the University of Pennsylvania, a major research university in the United States. Green open access to toll access articles via licit services, on the other hand, remains quite limited. Our interactive browser at https://greenelab.github.io/scihub allows users to explore these findings in more detail. For the first time, nearly all scholarly literature is available gratis to anyone with an Internet connection, suggesting the toll access business model may become unsustainable.</jats:p>",
-    "DOI": "10.7554/elife.32822",
-    "type": "article-journal",
-    "source": "Crossref",
-    "title": "Sci-Hub provides access to nearly all scholarly literature",
-    "volume": "7",
-    "author": [
-      {
-        "given": "Daniel S",
-        "family": "Himmelstein"
-      },
-      {
-        "given": "Ariel Rodriguez",
-        "family": "Romero"
-      },
-      {
-        "given": "Jacob G",
-        "family": "Levernier"
-      },
-      {
-        "given": "Thomas Anthony",
-        "family": "Munro"
-      },
-      {
-        "given": "Stephen Reid",
-        "family": "McLaughlin"
-      },
-      {
-        "given": "Bastian",
-        "family": "Greshake Tzovaras"
-      },
-      {
-        "given": "Casey S",
-        "family": "Greene"
-      }
-    ],
-    "container-title": "eLife",
-    "language": "en",
-    "issued": {
-      "date-parts": [
-        [
-          2018,
+          2022,
           3,
-          1
+          11
         ]
       ]
     },
-    "URL": "https://doi.org/ckcj",
-    "PMCID": "PMC5832410",
-    "PMID": "29424689",
-    "id": "IhliSZDo",
-    "note": "This CSL Item was generated by Manubot v0.5.5 from its persistent identifier (standard_id).\nstandard_id: doi:10.7554/elife.32822"
+    "URL": "https://doi.org/gr43qd",
+    "container-title-short": "PLoS Comput Biol",
+    "PMCID": "PMC8942277",
+    "PMID": "35275931",
+    "id": "1CdDn310M",
+    "note": "This CSL Item was generated by Manubot v0.5.5 from its persistent identifier (standard_id).\nstandard_id: doi:10.1371/journal.pcbi.1009926"
   },
   {
-    "id": "zBPP9YKu",
-    "type": "book",
-    "call-number": "Z286.O63 S83 2012",
-    "collection-title": "MIT Press essential knowledge series",
-    "event-place": "Cambridge, Mass",
-    "ISBN": "9780262517638",
-    "note": "OCLC: ocn754518563\nThis CSL Item was generated by Manubot v0.5.5 from its persistent identifier (standard_id).\nstandard_id: isbn:9780262517638",
-    "number-of-pages": "242",
-    "publisher": "MIT Press",
-    "publisher-place": "Cambridge, Mass",
-    "source": "Library of Congress ISBN",
-    "title": "Open access",
-    "author": [
-      {
-        "family": "Suber",
-        "given": "Peter"
-      }
-    ],
+    "id": "x24AA6cY",
+    "type": "webpage",
+    "URL": "https://wiki.eecs.yorku.ca/course_archive/2012-13/F/6328/_media/bottou-onlinelearning-98.pdf",
+    "title": "Online Learning and Stochastic Approximations",
     "issued": {
       "date-parts": [
         [
-          "2012"
-        ]
-      ]
-    }
-  },
-  {
-    "source": "PubMed",
-    "accessed": {
-      "date-parts": [
-        [
-          2023,
-          4,
-          14
+          1998
         ]
       ]
     },
-    "id": "mSMVRkoc",
-    "title": "Reproducibility of computational workflows is automated using continuous analysis",
     "author": [
       {
-        "family": "Beaulieu-Jones",
-        "given": "Brett K"
+        "given": "Leon",
+        "family": "Bottou"
+      }
+    ],
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: online-learning"
+  },
+  {
+    "id": "43wsMmMv",
+    "type": "article-journal",
+    "abstract": "Scikit-learn is a Python module integrating a wide range of state-of-the-art machine learning algorithms for medium-scale supervised and unsupervised problems. This package focuses on bringing machine learning to non-specialists using a general-purpose high-level language.  Emphasis is put on ease of use, performance, documentation, and API consistency.  It has minimal dependencies and is distributed under the simplified BSD license, encouraging its use in both academic and commercial settings.  Source code, binaries, and documentation can be downloaded from http://scikit-learn.sourceforge.net.",
+    "container-title": "Journal of Machine Learning Research",
+    "ISSN": "1533-7928",
+    "issue": "85",
+    "page": "2825-2830",
+    "source": "jmlr.org",
+    "title": "Scikit-learn: Machine Learning in Python",
+    "title-short": "Scikit-learn",
+    "URL": "http://jmlr.org/papers/v12/pedregosa11a.html",
+    "volume": "12",
+    "author": [
+      {
+        "family": "Pedregosa",
+        "given": "Fabian"
       },
       {
-        "family": "Greene",
-        "given": "Casey S"
-      }
-    ],
-    "container-title-short": "Nat Biotechnol",
-    "container-title": "Nature biotechnology",
-    "publisher-place": "United States",
-    "ISSN": "1087-0156",
-    "issued": {
-      "date-parts": [
-        [
-          2017,
-          4
-        ]
-      ]
-    },
-    "page": "342-346",
-    "volume": "35",
-    "issue": "4",
-    "PMID": "28288103",
-    "PMCID": "PMC6103790",
-    "DOI": "10.1038/nbt.3780",
-    "type": "article-journal",
-    "URL": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6103790/",
-    "note": "This CSL Item was generated by Manubot v0.5.5 from its persistent identifier (standard_id).\nstandard_id: pmc:PMC6103790"
-  },
-  {
-    "title": "Bitcoin for the biological literature.",
-    "volume": "566",
-    "issue": "7742",
-    "page": "141-142",
-    "container-title": "Nature",
-    "container-title-short": "Nature",
-    "ISSN": "1476-4687",
-    "issued": {
-      "date-parts": [
-        [
-          2019,
-          2
-        ]
-      ]
-    },
-    "author": [
-      {
-        "given": "Douglas",
-        "family": "Heaven"
-      }
-    ],
-    "PMID": "30718888",
-    "DOI": "10.1038/d41586-019-00447-9",
-    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/30718888",
-    "type": "article-journal",
-    "id": "126Wi5Us4",
-    "note": "This CSL Item was generated by Manubot v0.5.5 from its persistent identifier (standard_id).\nstandard_id: pubmed:30718888"
-  },
-  {
-    "id": "1GGGHdsew",
-    "type": "report",
-    "language": "en-US",
-    "publisher": "Manubot",
-    "source": "greenelab.github.io",
-    "title": "Open collaborative writing with Manubot",
-    "URL": "https://greenelab.github.io/meta-review/",
-    "author": [
-      {
-        "family": "Himmelstein",
-        "given": "Daniel S."
+        "family": "Varoquaux",
+        "given": "Gaël"
       },
       {
-        "family": "Rubinetti",
+        "family": "Gramfort",
+        "given": "Alexandre"
+      },
+      {
+        "family": "Michel",
         "given": "Vincent"
       },
       {
-        "family": "Slochower",
-        "given": "David R."
+        "family": "Thirion",
+        "given": "Bertrand"
       },
       {
-        "family": "Hu",
-        "given": "Dongbo"
+        "family": "Grisel",
+        "given": "Olivier"
       },
       {
-        "family": "Malladi",
-        "given": "Venkat S."
+        "family": "Blondel",
+        "given": "Mathieu"
       },
       {
-        "family": "Greene",
-        "given": "Casey S."
+        "family": "Prettenhofer",
+        "given": "Peter"
       },
       {
-        "family": "Gitter",
-        "given": "Anthony"
+        "family": "Weiss",
+        "given": "Ron"
+      },
+      {
+        "family": "Dubourg",
+        "given": "Vincent"
+      },
+      {
+        "family": "Vanderplas",
+        "given": "Jake"
+      },
+      {
+        "family": "Passos",
+        "given": "Alexandre"
+      },
+      {
+        "family": "Cournapeau",
+        "given": "David"
+      },
+      {
+        "family": "Brucher",
+        "given": "Matthieu"
+      },
+      {
+        "family": "Perrot",
+        "given": "Matthieu"
+      },
+      {
+        "family": "Duchesnay",
+        "given": "Édouard"
       }
     ],
     "accessed": {
@@ -434,43 +415,70 @@
         [
           "2023",
           4,
-          14
-        ]
-      ]
-    },
-    "issued": {
-      "date-parts": [
-        [
-          "2020",
-          5,
           25
         ]
       ]
     },
-    "note": "This CSL Item was generated by Manubot v0.5.5 from its persistent identifier (standard_id).\nstandard_id: url:https://greenelab.github.io/meta-review/"
-  },
-  {
-    "id": "QhC8yJ7V",
-    "type": "document",
-    "note": "QID: Q56458321\nThis CSL Item was generated by Manubot v0.5.5 from its persistent identifier (standard_id).\nstandard_id: wikidata:Q56458321",
-    "source": "Wikidata",
-    "title": "Plan S: Accelerating the transition to full and immediate Open Access to scientific publications",
-    "title-short": "Plan S",
-    "author": [
-      {
-        "family": "S",
-        "given": "cOAlition"
-      }
-    ],
     "issued": {
       "date-parts": [
         [
-          "2018",
-          9,
-          4
+          "2011"
         ]
       ]
     },
-    "URL": "https://www.wikidata.org/wiki/Q56458321"
+    "note": "This CSL Item was generated by Manubot v0.5.5 from its persistent identifier (standard_id).\nstandard_id: url:https://jmlr.org/papers/v12/pedregosa11a.html"
+  },
+  {
+    "id": "Mm8xIDqq",
+    "type": "article-journal",
+    "abstract": "LIBLINEAR is an open source library for large-scale linear\nclassification.  It supports logistic regression and linear support\nvector machines.  We provide easy-to-use command-line tools and\nlibrary calls for users and developers.  \nComprehensive documents are available for both beginners and advanced\nusers.  Experiments demonstrate that LIBLINEAR is very efficient on\nlarge sparse data sets.",
+    "container-title": "Journal of Machine Learning Research",
+    "ISSN": "1533-7928",
+    "issue": "61",
+    "page": "1871-1874",
+    "source": "www.jmlr.org",
+    "title": "LIBLINEAR: A Library for Large Linear Classification",
+    "title-short": "LIBLINEAR",
+    "URL": "http://jmlr.org/papers/v9/fan08a.html",
+    "volume": "9",
+    "author": [
+      {
+        "family": "Fan",
+        "given": "Rong-En"
+      },
+      {
+        "family": "Chang",
+        "given": "Kai-Wei"
+      },
+      {
+        "family": "Hsieh",
+        "given": "Cho-Jui"
+      },
+      {
+        "family": "Wang",
+        "given": "Xiang-Rui"
+      },
+      {
+        "family": "Lin",
+        "given": "Chih-Jen"
+      }
+    ],
+    "accessed": {
+      "date-parts": [
+        [
+          "2023",
+          4,
+          25
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          "2008"
+        ]
+      ]
+    },
+    "note": "This CSL Item was generated by Manubot v0.5.5 from its persistent identifier (standard_id).\nstandard_id: url:https://www.jmlr.org/papers/v9/fan08a.html"
   }
 ]
