@@ -17,5 +17,38 @@
       "family": "Bottou"
     }
   ]
+},
+{
+  "id": "l1-logistic-regression",
+  "type": "paper-conference",
+  "publisher": "Association for the Advancement of Artificial Intelligence (AAAI)",
+  "container-title": "AAAI 2006",
+  "URL": "https://ai.stanford.edu/~pabbeel//pubs/LeeLeeAbbeelNg_el1rlr_AAAI2006.pdf",
+  "title": "Efficient L1 Regularized Logistic Regression",
+  "issued": {
+    "date-parts": [
+      [
+        2006
+      ]
+    ]
+  },
+  "author": [
+    {
+      "given": "Su-In",
+      "family": "Lee"
+    },
+    {
+      "given": "Honglak",
+      "family": "Lee"
+    },
+    {
+      "given": "Pieter",
+      "family": "Abbeel"
+    },
+    {
+      "given": "Andrew Y.",
+      "family": "Ng"
+    }
+  ]
 }
 ]
