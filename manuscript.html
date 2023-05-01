@@ -54,8 +54,8 @@
   <meta name="dc.date" content="2023-05-01" />
   <meta name="citation_publication_date" content="2023-05-01" />
   <meta property="article:published_time" content="2023-05-01" />
-  <meta name="dc.modified" content="2023-05-01T13:15:14+00:00" />
-  <meta property="article:modified_time" content="2023-05-01T13:15:14+00:00" />
+  <meta name="dc.modified" content="2023-05-01T14:04:45+00:00" />
+  <meta property="article:modified_time" content="2023-05-01T14:04:45+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -77,9 +77,9 @@
   <meta name="citation_fulltext_html_url" content="https://greenelab.github.io/optimizer-manuscript/" />
   <meta name="citation_pdf_url" content="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/5b9c874bfe869d05e25cf13fcecdb47bafa7a571/" />
-  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/5b9c874bfe869d05e25cf13fcecdb47bafa7a571/" />
-  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/5b9c874bfe869d05e25cf13fcecdb47bafa7a571/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/c5471d9871088ab81646ad28a6f0b6cbfedb322c/" />
+  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/c5471d9871088ab81646ad28a6f0b6cbfedb322c/" />
+  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/c5471d9871088ab81646ad28a6f0b6cbfedb322c/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -96,9 +96,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://greenelab.github.io/optimizer-manuscript/v/5b9c874bfe869d05e25cf13fcecdb47bafa7a571/">permalink</a>)
+(<a href="https://greenelab.github.io/optimizer-manuscript/v/c5471d9871088ab81646ad28a6f0b6cbfedb322c/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/greenelab/optimizer-manuscript/tree/5b9c874bfe869d05e25cf13fcecdb47bafa7a571">greenelab/optimizer-manuscript@5b9c874</a>
+from <a href="https://github.com/greenelab/optimizer-manuscript/tree/c5471d9871088ab81646ad28a6f0b6cbfedb322c">greenelab/optimizer-manuscript@c5471d9</a>
 on May 1, 2023.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -150,20 +150,54 @@ Comparing optimizers/model implementations directly is rare in applications of m
 Based on our results, we recommend considering the appropriate optimization approach carefully based on the goals of each individual analysis.</p>
 <h2 class="page_break_before" id="methods">Methods</h2>
 <h2 class="page_break_before" id="results">Results</h2>
+<p>For each of the 125 driver genes from the Vogelstein et al. 2013 paper, we trained models to predict mutation status (presence or absence) from RNA-seq data, derived from the TCGA Pan-Cancer Atlas.
+For each optimizer, we trained LASSO logistic regression models across a variety of regularization parameters (see Methods for parameter range details), for 4 cross-validation splits x 2 replicates (random seeds) for a total of 8 different models per parameter.
+Cross-validation splits were stratified by cancer type.</p>
+<p>Previous work has shown that pan-cancer classifiers of Ras mutation status are accurate and biologically informative <span class="citation" data-cites="17XHtmqPY">[<a href="#ref-17XHtmqPY" role="doc-biblioref">9</a>]</span>.
+As model complexity increases (more nonzero coefficients) for the <code>liblinear</code> optimizer, we observe that performance increases then decreases, corresponding to overfitting for high model complexities/numbers of nonzero coefficients (Figure <a href="#fig:optimizer_compare_mutations">1</a>A).
+.
+On the other hand, for the SGD optimizer, we observe an increase in performance as model complexity increases, with models having no nonzero coefficients performing the best (Figure <a href="#fig:optimizer_compare_mutations">1</a>B).
+In this case, top performance for SGD (the largest bin, i.e. furthest right on the x-axis) is slightly worse than top performance for <code>liblinear</code> (the third smallest bin): we observed a mean test AUPR of 0.618 for SGD vs. mean AUPR of 0.688 for <code>liblinear</code>.
+As model complexity varies, similar performance trends tend to hold across a variety of driver genes in the Vogelstein dataset, and for a variety of approaches to quantifying model complexity (see Supplementary Data).</p>
+<p>To determine if the relative performance improvement with <code>liblinear</code> tends to hold across the genes in the Vogelstein dataset at large, we compared performance for the best-performing models for each gene, between optimizers.
+Figure <a href="#fig:optimizer_compare_mutations">1</a>C shows the distribution of differences in performance across genes.
+The distribution is generally shifted to the right, suggesting that <code>liblinear</code> generally tends to outperform SGD.
+We saw that for 71/84 genes, performance for the best-performing model was better using <code>liblinear</code> than SGD, and for the other 13 genes performance was better using SGD.</p>
+<div id="fig:optimizer_compare_mutations" class="fignos">
+<figure>
+<img src="images/figure_1.png" style="width:100.0%" alt="Figure 1: A. Performance vs. model complexity (number of nonzero coefficients) for KRAS mutation status prediction, for liblinear optimizer. Bins are derived from deciles of coefficient count distribution across optimizers; additional detail in Methods. “Holdout” dataset is used in panel C and following figures for best-performing model selection, “test” data is completely held out from model selection and used for evaluation in panel C and following figures. B. Performance vs. model complexity (number of nonzero coefficients) for KRAS mutation status prediction, for SGD optimizer. C. Distribution of performance difference between best-performing model for liblinear and SGD optimizers, across all 84 genes in Vogelstein driver gene set. Positive numbers on the x-axis indicate better performance using liblinear, and negative numbers indicate better performance using SGD." />
+<figcaption aria-hidden="true"><span>Figure 1:</span> <strong>A.</strong> Performance vs. model complexity (number of nonzero coefficients) for KRAS mutation status prediction, for <code>liblinear</code> optimizer. Bins are derived from deciles of coefficient count distribution across optimizers; additional detail in Methods. “Holdout” dataset is used in panel C and following figures for best-performing model selection, “test” data is completely held out from model selection and used for evaluation in panel C and following figures.
+<strong>B.</strong> Performance vs. model complexity (number of nonzero coefficients) for KRAS mutation status prediction, for SGD optimizer.
+<strong>C.</strong> Distribution of performance difference between best-performing model for <code>liblinear</code> and SGD optimizers, across all 84 genes in Vogelstein driver gene set. Positive numbers on the x-axis indicate better performance using <code>liblinear</code>, and negative numbers indicate better performance using SGD.</figcaption>
+</figure>
+</div>
+<p>We next sought to determine whether there was a difference in the magnitudes of coefficients in the models resulting from the different optimization schemes.
+Following up on the trend in Figure <a href="#fig:optimizer_compare_mutations">1</a>, where we saw that the best-performing SGD model had many nonzero coefficients, we also see that in general across all genes, the best-performing SGD models tend to be bimodal, sometimes having few nonzero coefficients but often having many/all nonzero coefficients (Figure <a href="#fig:optimizer_coefs">2</a>A).
+By contrast, the <code>liblinear</code> models are almost always much sparser with fewer than 2500 nonzero coefficients, out of ~16100 total input features.</p>
+<p>Despite the SGD models performing best with many nonzero coefficients, it could be the case that many of the coefficients could be “effectively” 0, or uninformative to the final model.
+However, Figure <a href="#fig:optimizer_coefs">2</a>B provides evidence that this is not the case, with most coefficients in the best-performing KRAS mutation prediction model using SGD being considerably larger than the coefficients in the best-performing model using <code>liblinear</code>, and very few close to 0.
+This emphasizes that the different optimization methods result in fundamentally different models, relying on different numbers of features with nonzero coefficients in different magnitudes, rather than converging to similar models.</p>
+<div id="fig:optimizer_coefs" class="fignos">
+<figure>
+<img src="images/figure_2.png" style="width:80.0%" alt="Figure 2: A. Distribution across genes of the number of nonzero coefficients included in best-performing LASSO logistic regression models. Violin plot density estimations are clipped at the ends of the observed data range, and boxes show the median/IQR. B. Distribution of coefficient magnitudes for a single KRAS mutation prediction model (random seed 42, first cross-validation split), colored by optimizer. The x-axis shows the base-10 logarithm of the absolute value of each coefficient + 1 (since some coefficients are exactly 0), and the y-axis shows the base-10 log of the count of coefficients in each bin. Other random seeds and cross-validation splits are similar." />
+<figcaption aria-hidden="true"><span>Figure 2:</span> <strong>A.</strong> Distribution across genes of the number of nonzero coefficients included in best-performing LASSO logistic regression models. Violin plot density estimations are clipped at the ends of the observed data range, and boxes show the median/IQR.
+<strong>B.</strong> Distribution of coefficient magnitudes for a single KRAS mutation prediction model (random seed 42, first cross-validation split), colored by optimizer. The x-axis shows the base-10 logarithm of the absolute value of each coefficient + 1 (since some coefficients are exactly 0), and the y-axis shows the base-10 log of the count of coefficients in each bin. Other random seeds and cross-validation splits are similar.</figcaption>
+</figure>
+</div>
 <h2 class="page_break_before" id="discussion">Discussion</h2>
 <p>Our results suggest that even for the same model, LASSO logistic regression, optimizer choice can affect model selection and performance.
 Existing gene expression prediction benchmarks and pipelines typically use a single model implementation (and thus a single optimizer).
 To our knowledge, the phenomenon we observed with SGD has not been documented in other applications of ML to genomic or transcriptomic data.
-In the broader machine learning research community, however, similar patterns have been observed for both linear models and deep neural networks (e.g. <span class="citation" data-cites="jhZXoLtp 1Cb94HrPD">[<a href="#ref-jhZXoLtp" role="doc-biblioref">9</a>,<a href="#ref-1Cb94HrPD" role="doc-biblioref">10</a>]</span>).
+In the broader machine learning research community, however, similar patterns have been observed for both linear models and deep neural networks (e.g. <span class="citation" data-cites="jhZXoLtp 1Cb94HrPD">[<a href="#ref-jhZXoLtp" role="doc-biblioref">10</a>,<a href="#ref-1Cb94HrPD" role="doc-biblioref">11</a>]</span>).
 This is often termed “benign overfitting”: the idea that “overfit” models, in the sense that they fit the training data perfectly and perform worse on the test data, can still outperform models that do not fit the training data as well or that have stronger explicit regularization.
-Benign overfitting has been observed with, and attributed to, optimization using SGD, which is thought to provide a form of implicit regularization <span class="citation" data-cites="1HdGWY10w kajx4KkT">[<a href="#ref-1HdGWY10w" role="doc-biblioref">11</a>,<a href="#ref-kajx4KkT" role="doc-biblioref">12</a>]</span>.</p>
+Benign overfitting has been observed with, and attributed to, optimization using SGD, which is thought to provide a form of implicit regularization <span class="citation" data-cites="1HdGWY10w kajx4KkT">[<a href="#ref-1HdGWY10w" role="doc-biblioref">12</a>,<a href="#ref-kajx4KkT" role="doc-biblioref">13</a>]</span>.</p>
 <p>We recommend thinking critically about optimizer choice, but this can be challenging for users that are inexperienced with machine learning or unfamiliar with how certain models are fit under the hood.
-For example, R’s <code>glmnet</code> package uses a cyclical coordinate descent algorithm to fit logistic regression models <span class="citation" data-cites="10aVUDFmA">[<a href="#ref-10aVUDFmA" role="doc-biblioref">13</a>]</span>, which would presumably behave similarly to <code>liblinear</code>, but this is somewhat opaque in the <code>glmnet</code> documentation itself.
-LASSO logistic regression is a convex optimization problem, meaning there is a single unique optimum of the loss function in contrast to more complex models such as neural networks, but this optimum can be computationally intensive to find in practice and there is no closed-form solution <span class="citation" data-cites="iAznO95g">[<a href="#ref-iAznO95g" role="doc-biblioref">14</a>]</span>.
+For example, R’s <code>glmnet</code> package uses a cyclical coordinate descent algorithm to fit logistic regression models <span class="citation" data-cites="10aVUDFmA">[<a href="#ref-10aVUDFmA" role="doc-biblioref">14</a>]</span>, which would presumably behave similarly to <code>liblinear</code>, but this is somewhat opaque in the <code>glmnet</code> documentation itself.
+LASSO logistic regression is a convex optimization problem, meaning there is a single unique optimum of the loss function in contrast to more complex models such as neural networks, but this optimum can be computationally intensive to find in practice and there is no closed-form solution <span class="citation" data-cites="iAznO95g">[<a href="#ref-iAznO95g" role="doc-biblioref">15</a>]</span>.
 Increased transparency and documentation in popular machine learning packages with respect to optimization, especially for models that are challenging to fit, would benefit new and unfamiliar users.</p>
 <p>Similar to what we see in our SGD-optimized models, there exist other problems in gene expression analysis where using all available features is better than using a subset.
-For example, using the full gene set improves correlations between preclinical cancer models and their tissue of origin, as compared to selecting genes based on variability or tissue-specificity <span class="citation" data-cites="lhYg2Yc3">[<a href="#ref-lhYg2Yc3" role="doc-biblioref">15</a>]</span>.
-On the other hand, when predicting cell line viability from gene expression profiles, selecting features by Pearson correlation improves performance over using all features, similar to our <code>liblinear</code> classifiers <span class="citation" data-cites="1CcaMqQZg">[<a href="#ref-1CcaMqQZg" role="doc-biblioref">16</a>]</span>.
+For example, using the full gene set improves correlations between preclinical cancer models and their tissue of origin, as compared to selecting genes based on variability or tissue-specificity <span class="citation" data-cites="lhYg2Yc3">[<a href="#ref-lhYg2Yc3" role="doc-biblioref">16</a>]</span>.
+On the other hand, when predicting cell line viability from gene expression profiles, selecting features by Pearson correlation improves performance over using all features, similar to our <code>liblinear</code> classifiers <span class="citation" data-cites="1CcaMqQZg">[<a href="#ref-1CcaMqQZg" role="doc-biblioref">17</a>]</span>.
 An avenue of future work for our SGD classifiers would be to interpret the coefficients and compare them systematically to the coefficients found using <code>liblinear</code>.
 It could be useful to understand if the two optimization methods emphasize the same pathways or functional gene sets, or if there are patterns to which driver mutations perform better with more/fewer nonzero coefficients.</p>
 <h2 class="page_break_before" id="references">References</h2>
@@ -193,29 +227,32 @@ It could be useful to understand if the two optimization methods emphasize the s
 <div id="ref-809OyWlC" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">8. </div><div class="csl-right-inline"><strong>Cancer Genome Landscapes</strong> <div class="csl-block">B Vogelstein, N Papadopoulos, VE Velculescu, S Zhou, LA Diaz, KW Kinzler</div> <em>Science</em> (2013-03-28) <a href="https://doi.org/6rg">https://doi.org/6rg</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1126/science.1235122">10.1126/science.1235122</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/23539594">23539594</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3749880">PMC3749880</a></div></div>
 </div>
+<div id="ref-17XHtmqPY" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline"><strong>Machine Learning Detects Pan-cancer Ras Pathway Activation in The Cancer Genome Atlas</strong> <div class="csl-block">Gregory P Way, Francisco Sanchez-Vega, Konnor La, Joshua Armenia, Walid K Chatila, Augustin Luna, Chris Sander, Andrew D Cherniack, Marco Mina, Giovanni Ciriello, … Armaz Mariamidze</div> <em>Cell Reports</em> (2018-04) <a href="https://doi.org/gfspsb">https://doi.org/gfspsb</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1016/j.celrep.2018.03.046">10.1016/j.celrep.2018.03.046</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29617658">29617658</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5918694">PMC5918694</a></div></div>
+</div>
 <div id="ref-jhZXoLtp" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">9. </div><div class="csl-right-inline"><strong>Benign overfitting in linear regression</strong> <div class="csl-block">Peter L Bartlett, Philip M Long, Gábor Lugosi, Alexander Tsigler</div> <em>Proceedings of the National Academy of Sciences</em> (2020-04-24) <a href="https://doi.org/gjgsxq">https://doi.org/gjgsxq</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1073/pnas.1907378117">10.1073/pnas.1907378117</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/32332161">32332161</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7720150">PMC7720150</a></div></div>
+<div class="csl-left-margin">10. </div><div class="csl-right-inline"><strong>Benign overfitting in linear regression</strong> <div class="csl-block">Peter L Bartlett, Philip M Long, Gábor Lugosi, Alexander Tsigler</div> <em>Proceedings of the National Academy of Sciences</em> (2020-04-24) <a href="https://doi.org/gjgsxq">https://doi.org/gjgsxq</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1073/pnas.1907378117">10.1073/pnas.1907378117</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/32332161">32332161</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7720150">PMC7720150</a></div></div>
 </div>
 <div id="ref-1Cb94HrPD" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">10. </div><div class="csl-right-inline"><strong>Understanding deep learning requires rethinking generalization</strong> <div class="csl-block">Chiyuan Zhang, Samy Bengio, Moritz Hardt, Benjamin Recht, Oriol Vinyals</div> <em>arXiv</em> (2017-02-28) <a href="https://arxiv.org/abs/1611.03530">https://arxiv.org/abs/1611.03530</a></div>
+<div class="csl-left-margin">11. </div><div class="csl-right-inline"><strong>Understanding deep learning requires rethinking generalization</strong> <div class="csl-block">Chiyuan Zhang, Samy Bengio, Moritz Hardt, Benjamin Recht, Oriol Vinyals</div> <em>arXiv</em> (2017-02-28) <a href="https://arxiv.org/abs/1611.03530">https://arxiv.org/abs/1611.03530</a></div>
 </div>
 <div id="ref-1HdGWY10w" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">11. </div><div class="csl-right-inline"><strong>Understanding deep learning (still) requires rethinking generalization</strong> <div class="csl-block">Chiyuan Zhang, Samy Bengio, Moritz Hardt, Benjamin Recht, Oriol Vinyals</div> <em>Communications of the ACM</em> (2021-02-22) <a href="https://doi.org/gh57fd">https://doi.org/gh57fd</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1145/3446776">10.1145/3446776</a></div></div>
+<div class="csl-left-margin">12. </div><div class="csl-right-inline"><strong>Understanding deep learning (still) requires rethinking generalization</strong> <div class="csl-block">Chiyuan Zhang, Samy Bengio, Moritz Hardt, Benjamin Recht, Oriol Vinyals</div> <em>Communications of the ACM</em> (2021-02-22) <a href="https://doi.org/gh57fd">https://doi.org/gh57fd</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1145/3446776">10.1145/3446776</a></div></div>
 </div>
 <div id="ref-kajx4KkT" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">12. </div><div class="csl-right-inline"><strong>Benign Overfitting of Constant-Stepsize SGD for Linear Regression</strong> <div class="csl-block">Difan Zou, Jingfeng Wu, Vladimir Braverman, Quanquan Gu, Sham Kakade</div> <em>Proceedings of Thirty Fourth Conference on Learning Theory</em> (2021-07-21) <a href="https://proceedings.mlr.press/v134/zou21a.html">https://proceedings.mlr.press/v134/zou21a.html</a></div>
+<div class="csl-left-margin">13. </div><div class="csl-right-inline"><strong>Benign Overfitting of Constant-Stepsize SGD for Linear Regression</strong> <div class="csl-block">Difan Zou, Jingfeng Wu, Vladimir Braverman, Quanquan Gu, Sham Kakade</div> <em>Proceedings of Thirty Fourth Conference on Learning Theory</em> (2021-07-21) <a href="https://proceedings.mlr.press/v134/zou21a.html">https://proceedings.mlr.press/v134/zou21a.html</a></div>
 </div>
 <div id="ref-10aVUDFmA" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">13. </div><div class="csl-right-inline"><strong>Regularization Paths for Generalized Linear Models via Coordinate Descent</strong> <div class="csl-block">Jerome Friedman, Trevor Hastie, Robert Tibshirani</div> <em>Journal of Statistical Software</em> (2010) <a href="https://doi.org/bb3d">https://doi.org/bb3d</a> <div class="csl-block">DOI: <a href="https://doi.org/10.18637/jss.v033.i01">10.18637/jss.v033.i01</a></div></div>
+<div class="csl-left-margin">14. </div><div class="csl-right-inline"><strong>Regularization Paths for Generalized Linear Models via Coordinate Descent</strong> <div class="csl-block">Jerome Friedman, Trevor Hastie, Robert Tibshirani</div> <em>Journal of Statistical Software</em> (2010) <a href="https://doi.org/bb3d">https://doi.org/bb3d</a> <div class="csl-block">DOI: <a href="https://doi.org/10.18637/jss.v033.i01">10.18637/jss.v033.i01</a></div></div>
 </div>
 <div id="ref-iAznO95g" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">14. </div><div class="csl-right-inline"><strong>Efficient L1 Regularized Logistic Regression</strong> <div class="csl-block">Su-In Lee, Honglak Lee, Pieter Abbeel, Andrew Y Ng</div> <em>AAAI 2006</em> (2006) <a href="https://ai.stanford.edu/~pabbeel//pubs/LeeLeeAbbeelNg_el1rlr_AAAI2006.pdf">https://ai.stanford.edu/~pabbeel//pubs/LeeLeeAbbeelNg_el1rlr_AAAI2006.pdf</a></div>
+<div class="csl-left-margin">15. </div><div class="csl-right-inline"><strong>Efficient L1 Regularized Logistic Regression</strong> <div class="csl-block">Su-In Lee, Honglak Lee, Pieter Abbeel, Andrew Y Ng</div> <em>AAAI 2006</em> (2006) <a href="https://ai.stanford.edu/~pabbeel//pubs/LeeLeeAbbeelNg_el1rlr_AAAI2006.pdf">https://ai.stanford.edu/~pabbeel//pubs/LeeLeeAbbeelNg_el1rlr_AAAI2006.pdf</a></div>
 </div>
 <div id="ref-lhYg2Yc3" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">15. </div><div class="csl-right-inline"><strong>Evaluating cancer cell line and patient-derived xenograft recapitulation of tumor and non-diseased tissue gene expression profiles</strong> <div class="csl-block">Avery S Williams, Elizabeth J Wilk, Jennifer L Fisher, Brittany N Lasseigne</div> <em>Cold Spring Harbor Laboratory</em> (2023-04-13) <a href="https://doi.org/gr6jr4">https://doi.org/gr6jr4</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2023.04.11.536431">10.1101/2023.04.11.536431</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/37090499">37090499</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10120639">PMC10120639</a></div></div>
+<div class="csl-left-margin">16. </div><div class="csl-right-inline"><strong>Evaluating cancer cell line and patient-derived xenograft recapitulation of tumor and non-diseased tissue gene expression profiles</strong> <div class="csl-block">Avery S Williams, Elizabeth J Wilk, Jennifer L Fisher, Brittany N Lasseigne</div> <em>Cold Spring Harbor Laboratory</em> (2023-04-13) <a href="https://doi.org/gr6jr4">https://doi.org/gr6jr4</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2023.04.11.536431">10.1101/2023.04.11.536431</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/37090499">37090499</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10120639">PMC10120639</a></div></div>
 </div>
 <div id="ref-1CcaMqQZg" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">16. </div><div class="csl-right-inline"><strong>Gene expression has more power for predicting &lt;i&gt;in vitro&lt;/i&gt; cancer cell vulnerabilities than genomics</strong> <div class="csl-block">Joshua M Dempster, John M Krill-Burger, James M McFarland, Allison Warren, Jesse S Boehm, Francisca Vazquez, William C Hahn, Todd R Golub, Aviad Tsherniak</div> <em>Cold Spring Harbor Laboratory</em> (2020-02-24) <a href="https://doi.org/ghczbr">https://doi.org/ghczbr</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2020.02.21.959627">10.1101/2020.02.21.959627</a></div></div>
+<div class="csl-left-margin">17. </div><div class="csl-right-inline"><strong>Gene expression has more power for predicting &lt;i&gt;in vitro&lt;/i&gt; cancer cell vulnerabilities than genomics</strong> <div class="csl-block">Joshua M Dempster, John M Krill-Burger, James M McFarland, Allison Warren, Jesse S Boehm, Francisca Vazquez, William C Hahn, Todd R Golub, Aviad Tsherniak</div> <em>Cold Spring Harbor Laboratory</em> (2020-02-24) <a href="https://doi.org/ghczbr">https://doi.org/ghczbr</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2020.02.21.959627">10.1101/2020.02.21.959627</a></div></div>
 </div>
 </div>
 <!-- default theme -->

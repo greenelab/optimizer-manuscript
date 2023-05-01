@@ -23,8 +23,8 @@ header-includes: |
   <meta name="dc.date" content="2023-05-01" />
   <meta name="citation_publication_date" content="2023-05-01" />
   <meta property="article:published_time" content="2023-05-01" />
-  <meta name="dc.modified" content="2023-05-01T13:15:14+00:00" />
-  <meta property="article:modified_time" content="2023-05-01T13:15:14+00:00" />
+  <meta name="dc.modified" content="2023-05-01T14:04:45+00:00" />
+  <meta property="article:modified_time" content="2023-05-01T14:04:45+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -46,9 +46,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://greenelab.github.io/optimizer-manuscript/" />
   <meta name="citation_pdf_url" content="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/5b9c874bfe869d05e25cf13fcecdb47bafa7a571/" />
-  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/5b9c874bfe869d05e25cf13fcecdb47bafa7a571/" />
-  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/5b9c874bfe869d05e25cf13fcecdb47bafa7a571/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/c5471d9871088ab81646ad28a6f0b6cbfedb322c/" />
+  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/c5471d9871088ab81646ad28a6f0b6cbfedb322c/" />
+  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/c5471d9871088ab81646ad28a6f0b6cbfedb322c/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -70,9 +70,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/optimizer-manuscript/v/5b9c874bfe869d05e25cf13fcecdb47bafa7a571/))
+([permalink](https://greenelab.github.io/optimizer-manuscript/v/c5471d9871088ab81646ad28a6f0b6cbfedb322c/))
 was automatically generated
-from [greenelab/optimizer-manuscript@5b9c874](https://github.com/greenelab/optimizer-manuscript/tree/5b9c874bfe869d05e25cf13fcecdb47bafa7a571)
+from [greenelab/optimizer-manuscript@c5471d9](https://github.com/greenelab/optimizer-manuscript/tree/c5471d9871088ab81646ad28a6f0b6cbfedb322c)
 on May 1, 2023.
 </em></small>
 
@@ -144,6 +144,41 @@ Based on our results, we recommend considering the appropriate optimization appr
 ## Methods {.page_break_before}
 
 ## Results {.page_break_before}
+
+For each of the 125 driver genes from the Vogelstein et al. 2013 paper, we trained models to predict mutation status (presence or absence) from RNA-seq data, derived from the TCGA Pan-Cancer Atlas.
+For each optimizer, we trained LASSO logistic regression models across a variety of regularization parameters (see Methods for parameter range details), for 4 cross-validation splits x 2 replicates (random seeds) for a total of 8 different models per parameter.
+Cross-validation splits were stratified by cancer type.
+
+Previous work has shown that pan-cancer classifiers of Ras mutation status are accurate and biologically informative [@doi:10.1016/j.celrep.2018.03.046].
+As model complexity increases (more nonzero coefficients) for the `liblinear` optimizer, we observe that performance increases then decreases, corresponding to overfitting for high model complexities/numbers of nonzero coefficients (Figure {@fig:optimizer_compare_mutations}A).
+.
+On the other hand, for the SGD optimizer, we observe an increase in performance as model complexity increases, with models having no nonzero coefficients performing the best (Figure {@fig:optimizer_compare_mutations}B).
+In this case, top performance for SGD (the largest bin, i.e. furthest right on the x-axis) is slightly worse than top performance for `liblinear` (the third smallest bin): we observed a mean test AUPR of 0.618 for SGD vs. mean AUPR of 0.688 for `liblinear`.
+As model complexity varies, similar performance trends tend to hold across a variety of driver genes in the Vogelstein dataset, and for a variety of approaches to quantifying model complexity (see Supplementary Data).
+
+To determine if the relative performance improvement with `liblinear` tends to hold across the genes in the Vogelstein dataset at large, we compared performance for the best-performing models for each gene, between optimizers.
+Figure {@fig:optimizer_compare_mutations}C shows the distribution of differences in performance across genes.
+The distribution is generally shifted to the right, suggesting that `liblinear` generally tends to outperform SGD.
+We saw that for 71/84 genes, performance for the best-performing model was better using `liblinear` than SGD, and for the other 13 genes performance was better using SGD.
+
+![
+**A.** Performance vs. model complexity (number of nonzero coefficients) for KRAS mutation status prediction, for `liblinear` optimizer. Bins are derived from deciles of coefficient count distribution across optimizers; additional detail in Methods. "Holdout" dataset is used in panel C and following figures for best-performing model selection, "test" data is completely held out from model selection and used for evaluation in panel C and following figures.
+**B.** Performance vs. model complexity (number of nonzero coefficients) for KRAS mutation status prediction, for SGD optimizer.
+**C.** Distribution of performance difference between best-performing model for `liblinear` and SGD optimizers, across all 84 genes in Vogelstein driver gene set. Positive numbers on the x-axis indicate better performance using `liblinear`, and negative numbers indicate better performance using SGD.
+](images/figure_1.png){#fig:optimizer_compare_mutations width="100%"}
+
+We next sought to determine whether there was a difference in the magnitudes of coefficients in the models resulting from the different optimization schemes.
+Following up on the trend in Figure {@fig:optimizer_compare_mutations}, where we saw that the best-performing SGD model had many nonzero coefficients, we also see that in general across all genes, the best-performing SGD models tend to be bimodal, sometimes having few nonzero coefficients but often having many/all nonzero coefficients (Figure {@fig:optimizer_coefs}A).
+By contrast, the `liblinear` models are almost always much sparser with fewer than 2500 nonzero coefficients, out of ~16100 total input features.
+
+Despite the SGD models performing best with many nonzero coefficients, it could be the case that many of the coefficients could be "effectively" 0, or uninformative to the final model.
+However, Figure {@fig:optimizer_coefs}B provides evidence that this is not the case, with most coefficients in the best-performing KRAS mutation prediction model using SGD being considerably larger than the coefficients in the best-performing model using `liblinear`, and very few close to 0.
+This emphasizes that the different optimization methods result in fundamentally different models, relying on different numbers of features with nonzero coefficients in different magnitudes, rather than converging to similar models.
+
+![
+**A.** Distribution across genes of the number of nonzero coefficients included in best-performing LASSO logistic regression models. Violin plot density estimations are clipped at the ends of the observed data range, and boxes show the median/IQR.
+**B.** Distribution of coefficient magnitudes for a single KRAS mutation prediction model (random seed 42, first cross-validation split), colored by optimizer. The x-axis shows the base-10 logarithm of the absolute value of each coefficient + 1 (since some coefficients are exactly 0), and the y-axis shows the base-10 log of the count of coefficients in each bin. Other random seeds and cross-validation splits are similar.
+](images/figure_2.png){#fig:optimizer_coefs width="80%"}
 
 ## Discussion {.page_break_before}
 
