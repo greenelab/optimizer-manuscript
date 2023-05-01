@@ -9,3 +9,14 @@ content/02.main-text.md:11:overfit
 content/02.main-text.md:12:overfitting
 content/02.main-text.md:15:SGD
 content/02.main-text.md:16:optimizers
+content/02.main-text.md:27:genomic
+content/02.main-text.md:27:SGD
+content/02.main-text.md:27:transcriptomic
+content/02.main-text.md:28:arxiv
+content/02.main-text.md:29:overfit
+content/02.main-text.md:29:overfitting
+content/02.main-text.md:30:overfitting
+content/02.main-text.md:30:SGD
+content/02.main-text.md:38:SGD
+content/02.main-text.md:39:preclinical
+content/02.main-text.md:41:SGD
