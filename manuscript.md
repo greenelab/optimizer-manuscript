@@ -23,8 +23,8 @@ header-includes: |
   <meta name="dc.date" content="2023-05-02" />
   <meta name="citation_publication_date" content="2023-05-02" />
   <meta property="article:published_time" content="2023-05-02" />
-  <meta name="dc.modified" content="2023-05-02T15:18:45+00:00" />
-  <meta property="article:modified_time" content="2023-05-02T15:18:45+00:00" />
+  <meta name="dc.modified" content="2023-05-02T18:08:11+00:00" />
+  <meta property="article:modified_time" content="2023-05-02T18:08:11+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -46,9 +46,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://greenelab.github.io/optimizer-manuscript/" />
   <meta name="citation_pdf_url" content="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/0ca385b03cee75525f39dc9c2a5c9eb8c4bcbb04/" />
-  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/0ca385b03cee75525f39dc9c2a5c9eb8c4bcbb04/" />
-  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/0ca385b03cee75525f39dc9c2a5c9eb8c4bcbb04/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/1f1be22dd2b2794b587ac97d1d484dfc3af22d19/" />
+  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/1f1be22dd2b2794b587ac97d1d484dfc3af22d19/" />
+  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/1f1be22dd2b2794b587ac97d1d484dfc3af22d19/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -70,9 +70,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/optimizer-manuscript/v/0ca385b03cee75525f39dc9c2a5c9eb8c4bcbb04/))
+([permalink](https://greenelab.github.io/optimizer-manuscript/v/1f1be22dd2b2794b587ac97d1d484dfc3af22d19/))
 was automatically generated
-from [greenelab/optimizer-manuscript@0ca385b](https://github.com/greenelab/optimizer-manuscript/tree/0ca385b03cee75525f39dc9c2a5c9eb8c4bcbb04)
+from [greenelab/optimizer-manuscript@1f1be22](https://github.com/greenelab/optimizer-manuscript/tree/1f1be22dd2b2794b587ac97d1d484dfc3af22d19)
 on May 2, 2023.
 </em></small>
 
@@ -120,7 +120,24 @@ Casey S. Greene \<casey.s.greene@cuanschutz.edu\>.
 
 ## Abstract {.page_break_before}
 
+### Motivation
 
+Most models can be fit to data using various optimization approaches.
+While model choice is frequently reported in machine-learning-based research, optimizers are not often noted.
+We applied two different implementations of LASSO logistic regression implemented in Python's scikit-learn package, using two different optimization approaches (coordinate descent and stochastic gradient descent), to predict driver mutation presence or absence from gene expression across 84 pan-cancer driver genes.
+Across varying levels of regularization, we compared performance and model sparsity between optimizers.
+
+### Results
+
+In general, we found that coordinate descent (implemented in the `liblinear` library) tended to outperform SGD for the best-performing level of regularization.
+For most driver genes, the best-performing `liblinear` model was more highly regularized than the best-performing SGD model.
+Moreover, SGD models generally resisted overfitting as regularization strength decreased and model complexity increased.
+While the `liblinear` results for this problem match the conventional wisdom cautioning against overfitting, the SGD results contradict it.
+We believe that the choice of optimizers should be clearly reported as a part of the model selection and validation process, to allow readers and reviewers to better understand the context in which results have been generated.
+
+### Availability and implementation
+
+The code used to carry out the analyses in this study is available at <https://github.com/greenelab/pancancer-evaluation/tree/master/01_stratified_classification>. Performance/regularization strength curves for all genes in the Vogelstein et al. 2013 dataset are available at <https://doi.org/10.6084/m9.figshare.22728644>.
 
 
 ## Introduction {.page_break_before}
