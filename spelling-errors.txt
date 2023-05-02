@@ -7,6 +7,7 @@ dataset
 datasets
 decile
 deciles
+Figshare
 GDC
 Genomic
 GISTIC
@@ -22,6 +23,7 @@ omics
 optimizers
 overfit
 overfitting
+perf
 preclinical
 preclinically
 preprocess

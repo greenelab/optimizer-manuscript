@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2023-05-01'
+date-meta: '2023-05-02'
 author-meta:
 - Jake Crawford
 - Casey S. Greene
@@ -20,11 +20,11 @@ header-includes: |
   <meta name="citation_title" content="Optimizers manuscript" />
   <meta property="og:title" content="Optimizers manuscript" />
   <meta property="twitter:title" content="Optimizers manuscript" />
-  <meta name="dc.date" content="2023-05-01" />
-  <meta name="citation_publication_date" content="2023-05-01" />
-  <meta property="article:published_time" content="2023-05-01" />
-  <meta name="dc.modified" content="2023-05-01T15:21:11+00:00" />
-  <meta property="article:modified_time" content="2023-05-01T15:21:11+00:00" />
+  <meta name="dc.date" content="2023-05-02" />
+  <meta name="citation_publication_date" content="2023-05-02" />
+  <meta property="article:published_time" content="2023-05-02" />
+  <meta name="dc.modified" content="2023-05-02T15:18:45+00:00" />
+  <meta property="article:modified_time" content="2023-05-02T15:18:45+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -46,9 +46,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://greenelab.github.io/optimizer-manuscript/" />
   <meta name="citation_pdf_url" content="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/9b7c9ddfcaaee08d876e5818b7b8440314e20383/" />
-  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/9b7c9ddfcaaee08d876e5818b7b8440314e20383/" />
-  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/9b7c9ddfcaaee08d876e5818b7b8440314e20383/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/0ca385b03cee75525f39dc9c2a5c9eb8c4bcbb04/" />
+  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/0ca385b03cee75525f39dc9c2a5c9eb8c4bcbb04/" />
+  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/0ca385b03cee75525f39dc9c2a5c9eb8c4bcbb04/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -70,10 +70,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/optimizer-manuscript/v/9b7c9ddfcaaee08d876e5818b7b8440314e20383/))
+([permalink](https://greenelab.github.io/optimizer-manuscript/v/0ca385b03cee75525f39dc9c2a5c9eb8c4bcbb04/))
 was automatically generated
-from [greenelab/optimizer-manuscript@9b7c9dd](https://github.com/greenelab/optimizer-manuscript/tree/9b7c9ddfcaaee08d876e5818b7b8440314e20383)
-on May 1, 2023.
+from [greenelab/optimizer-manuscript@0ca385b](https://github.com/greenelab/optimizer-manuscript/tree/0ca385b03cee75525f39dc9c2a5c9eb8c4bcbb04)
+on May 2, 2023.
 </em></small>
 
 
@@ -250,6 +250,7 @@ It could be useful to understand if the two optimization methods emphasize the s
 
 The data analyzed during this study were previously published as part of the TCGA Pan-Cancer Atlas project [@doi:10.1038/ng.2764], and are available from the NIH NCI Genomic Data Commons (GDC).
 The scripts used to download and preprocess the datasets for this study are available at <https://github.com/greenelab/pancancer-evaluation/tree/master/00_process_data>, and the code used to carry out the analyses in this study is available at <https://github.com/greenelab/pancancer-evaluation/tree/master/01_stratified_classification>, both under the open-source BSD 3-clause license.
+Equivalent versions of Figure {@fig:optimizer_compare_mutations}A and {@fig:optimizer_compare_mutations}B for all 84 genes in the Vogelstein et al. 2013 gene set are available on Figshare at <https://doi.org/10.6084/m9.figshare.22728644>, under a CC0 license.
 This manuscript was written using Manubot [@doi:10.1371/journal.pcbi.1007128] and is available on GitHub at <https://github.com/greenelab/optimizer-manuscript> under the CC0-1.0 license.
 
 
@@ -257,4 +258,29 @@ This manuscript was written using Manubot [@doi:10.1371/journal.pcbi.1007128] an
 
 <!-- Explicitly insert bibliography here -->
 <div id="refs"></div>
+
+
+## Supplementary Material {.page_break_before}
+
+In the main text (Results and Methods), we described why and how we binned models to allow a comparison of model complexity across optimizers with parameters that vary in opposite directions.
+We also visualized the mapping of parameters to deciles, for `liblinear` and SGD separately, to quantify how well and how uniformly the model size deciles cover the range of parameters we used in the study.
+Figure {@fig:parameter_to_decile} shows this mapping for KRAS mutation status classification.
+The scikit-learn SGD implementation uses a regularization parameter $\alpha$ in which higher values mean more regularization (and thus models with fewer nonzero parameters), which is why lower SGD parameters map to higher deciles and vice-versa.
+`liblinear`, on the other hand, uses an inverse regularization parameter C in which higher values mean less regularization, so lower parameters map to lower deciles.
+We can see that most deciles contain anywhere from 1-3 different parameters (i.e. different models).
+
+![Mapping of parameter to decile, KRAS mutation status classification, for `liblinear` and SGD optimizers separately. Note that for the SGD plot, the parameter axis is inverted, since lower regularization parameters map to higher deciles in the nonzero coefficient distribution.](images/supp_figure_1.png){#fig:parameter_to_decile tag="S1" width="100%"}
+
+To motivate the choice of deciles of the nonzero coefficient distribution over a linear binning scheme, we also visualized the distribution of nonzero coefficients for KRAS mutation prediction models, showing the boundaries of deciles and linear bins.
+We see that the distribution is skewed toward very simple models (using no nonzero parameters, or only a few) and toward complex models (with most parameters set to be nonzero), so many of the linear bins covering intermediate values contain no models or very few models (Figure {@fig:coefs_dist}).
+Based on this, and the observation that the distributions look similar for most genes, we decided to bin models based on deciles to ensure more uniform coverage of models with different complexities.
+We also plotted the performance results for linear bins, similar to figures {@fig:optimizer_compare_mutations}A and {@fig:optimizer_compare_mutations}B in the main text, and general trends were mostly the same, although variation was mostly compressed to the smallest and largest bins.
+
+![Distribution of nonzero coefficients across parameters, KRAS mutation status classification. Grey dotted lines show boundaries for 10 linear bins, and black dotted lines show boundaries for deciles of nonzero coefficient distribution.](images/supp_figure_2.png){#fig:coefs_dist tag="S2" width="90%"}
+
+We can also visualize performance directly against the regularization parameters used for both `liblinear` and SGD.
+We can see that the trends are generally the same for KRAS, with `liblinear` overfitting for more complex models to the right of the plot, and SGD performing best for more complex models to the left of the plot (Figure {@fig:parameter_vs_perf}).
+Although it ultimately preserves the same message, we think this is visually more challenging to interpret than the plots in Figure {@fig:optimizer_compare_mutations} that use decile bins: since the parameters vary in different directions it makes it harder to assess which model is performing better, and for which level of regularization/complexity on the x-axis the best performance is reached, etc.
+
+![Performance vs. regularization parameter for KRAS mutation status classification, for `liblinear` and SGD optimizers separately.](images/supp_figure_3.png){#fig:parameter_vs_perf tag="S3" width="100%"}
 
