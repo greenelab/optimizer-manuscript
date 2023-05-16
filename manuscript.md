@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2023-05-02'
+date-meta: '2023-05-16'
 author-meta:
 - Jake Crawford
 - Casey S. Greene
@@ -20,11 +20,11 @@ header-includes: |
   <meta name="citation_title" content="Optimizers manuscript" />
   <meta property="og:title" content="Optimizers manuscript" />
   <meta property="twitter:title" content="Optimizers manuscript" />
-  <meta name="dc.date" content="2023-05-02" />
-  <meta name="citation_publication_date" content="2023-05-02" />
-  <meta property="article:published_time" content="2023-05-02" />
-  <meta name="dc.modified" content="2023-05-02T18:08:11+00:00" />
-  <meta property="article:modified_time" content="2023-05-02T18:08:11+00:00" />
+  <meta name="dc.date" content="2023-05-16" />
+  <meta name="citation_publication_date" content="2023-05-16" />
+  <meta property="article:published_time" content="2023-05-16" />
+  <meta name="dc.modified" content="2023-05-16T19:33:32+00:00" />
+  <meta property="article:modified_time" content="2023-05-16T19:33:32+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -46,9 +46,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://greenelab.github.io/optimizer-manuscript/" />
   <meta name="citation_pdf_url" content="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/1f1be22dd2b2794b587ac97d1d484dfc3af22d19/" />
-  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/1f1be22dd2b2794b587ac97d1d484dfc3af22d19/" />
-  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/1f1be22dd2b2794b587ac97d1d484dfc3af22d19/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/9fd7ac43e314364ee23d155c2bdcef7b040b5f80/" />
+  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/9fd7ac43e314364ee23d155c2bdcef7b040b5f80/" />
+  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/9fd7ac43e314364ee23d155c2bdcef7b040b5f80/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -70,10 +70,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/optimizer-manuscript/v/1f1be22dd2b2794b587ac97d1d484dfc3af22d19/))
+([permalink](https://greenelab.github.io/optimizer-manuscript/v/9fd7ac43e314364ee23d155c2bdcef7b040b5f80/))
 was automatically generated
-from [greenelab/optimizer-manuscript@1f1be22](https://github.com/greenelab/optimizer-manuscript/tree/1f1be22dd2b2794b587ac97d1d484dfc3af22d19)
-on May 2, 2023.
+from [greenelab/optimizer-manuscript@9fd7ac4](https://github.com/greenelab/optimizer-manuscript/tree/9fd7ac43e314364ee23d155c2bdcef7b040b5f80)
+on May 16, 2023.
 </em></small>
 
 
