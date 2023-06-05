@@ -23,8 +23,8 @@ header-includes: |
   <meta name="dc.date" content="2023-06-05" />
   <meta name="citation_publication_date" content="2023-06-05" />
   <meta property="article:published_time" content="2023-06-05" />
-  <meta name="dc.modified" content="2023-06-05T13:17:22+00:00" />
-  <meta property="article:modified_time" content="2023-06-05T13:17:22+00:00" />
+  <meta name="dc.modified" content="2023-06-05T17:26:04+00:00" />
+  <meta property="article:modified_time" content="2023-06-05T17:26:04+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -46,9 +46,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://greenelab.github.io/optimizer-manuscript/" />
   <meta name="citation_pdf_url" content="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/4471c9681723062bc3b789c3a00c756b3e5167b3/" />
-  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/4471c9681723062bc3b789c3a00c756b3e5167b3/" />
-  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/4471c9681723062bc3b789c3a00c756b3e5167b3/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/b1665fca5a0acd4bbe445ebdf625eeb5f7a201d4/" />
+  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/b1665fca5a0acd4bbe445ebdf625eeb5f7a201d4/" />
+  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/b1665fca5a0acd4bbe445ebdf625eeb5f7a201d4/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -70,9 +70,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/optimizer-manuscript/v/4471c9681723062bc3b789c3a00c756b3e5167b3/))
+([permalink](https://greenelab.github.io/optimizer-manuscript/v/b1665fca5a0acd4bbe445ebdf625eeb5f7a201d4/))
 was automatically generated
-from [greenelab/optimizer-manuscript@4471c96](https://github.com/greenelab/optimizer-manuscript/tree/4471c9681723062bc3b789c3a00c756b3e5167b3)
+from [greenelab/optimizer-manuscript@b1665fc](https://github.com/greenelab/optimizer-manuscript/tree/b1665fca5a0acd4bbe445ebdf625eeb5f7a201d4)
 on June 5, 2023.
 </em></small>
 
@@ -187,20 +187,43 @@ Based on our previous work, gene expression is generally effective for this prob
 Our model was trained on gene expression data (X) to predict mutation presence or absence (y) in a target gene.
 To control for varying mutation burden per sample and to adjust for potential cancer type-specific expression patterns, we included one-hot encoded cancer type and log~10~(sample mutation count) in the model as covariates.
 Since gene expression datasets tend to have many dimensions and comparatively few samples, we used a LASSO penalty to perform feature selection [@doi:10.1111/j.2517-6161.1996.tb02080.x].
-LASSO logistic regression has the advantage of generating sparse models (some or most coefficients are 0), as well as having a single tunable hyperparameter which can be easily interpreted as an indicator of regularization strength/model complexity.
+LASSO logistic regression has the advantage of generating sparse models (some or most coefficients are 0), as well as having a single tunable hyperparameter which can be easily interpreted as an indicator of regularization strength, or model complexity.
 
 To compare model selection across optimizers, we first split the "valid" cancer types into train (75%) and test (25%) sets.
-We then split the training data into "subtrain" (66% of the training set) data to train the model on, and "holdout" (33% of the training set) data to perform model selection, i.e. to use to select the best-performing regularization parameter.
+We then split the training data into "subtrain" (66% of the training set) data to train the model on, and "holdout" (33% of the training set) data to perform model selection, i.e. to use to select the best-performing regularization parameter, and the best-performing learning rate for SGD in the cases where multiple learning rates were considered.
 In each case, these splits were stratified by cancer type, i.e. each split had as close as possible to equal proportions of each cancer type included in the dataset for the given driver gene.
-For the `liblinear` optimizer, we trained models using the following range of $C$ values (inverse of regularization strength; i.e. higher values = less regularization) : {0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 5, 10, 50, 100}.
-For the SGD optimizer, we trained models using the following range of $\alpha$ values (proportional to regularization strength; i.e. higher values = more regularization) : {0.00001, 0.00005, 0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 5, 10}.
-These hyperparmeter ranges were intended to give reasonable coverage across genes that included "underfit" models (predicting only the mean or using very few features, poor performance on all datasets), "overfit" models (performing perfectly on training data but comparatively poorly on cross-validation and test data), and a wide variety of models in between that typically included the best fits to the cross-validation and test data.
 
-Since the optimizers we compared have regularization parameters that vary in opposite directions and on different scales, rather than comparing regularization strength directly we used the number of nonzero coefficients in the resulting models to make a like-to-like comparison of model complexity.
-For each gene, we combined all models (2 random seeds and 4 cross-validation folds = 8 total models for each parameter) across both optimizers to establish an overall distribution of nonzero coefficient counts.
-We then calculated the deciles of this distribution, and binned models by decile.
-For some genes, there were enough models with no nonzero coefficients (i.e. dummy regressors/models that just predict the mean) that one or more decile boundaries were exactly 0.
-In these cases, we combined the lower deciles bounded by 0 into a single bin, which resulted in fewer than 10 total bins.
+### LASSO parameter range selection and comparison between optimizers
+
+The scikit-learn implementations of coordinate descent (in `liblinear`/`LogisticRegression`) and stochastic gradient descent (in `SGDClassifier`) use slightly different parameterizations of the LASSO regularization strength parameter. `liblinear`'s logistic regression solver optimizes the following loss function:
+
+$$\hat{w} = \text{argmin}_{w} \ (C \cdot \ell(X, y; w)) + ||w||_1$$
+
+where $\ell(X, y; w)$ denotes the negative log-likelihood of the observed data $(X, y)$ given a particular choice of feature weights $w$.`SGDClassifier` optimizes the following loss function:
+
+$$\hat{w} = \text{argmin}_{w} \ \ell(X, y; w) + \alpha ||w||_1$$
+
+<!--_ -->
+
+which is equivalent with the exception of the LASSO parameter which is formulated slightly differently, as $\alpha = \frac{1}{C}$.
+The result of this slight difference in parameterization is that `liblinear` $C$ values vary inversely with regularization strength (higher values = less regularization, or greater model complexity) and `SGDClassifier` $\alpha$ values vary directly with regularization strength (lower values = less regularization, or greater model complexity).
+
+For the `liblinear` optimizer, we trained models using $C$ values evenly spaced on a logarithmic scale between (10^-3^, 10^7^); i.e. the output of `numpy.logspace(-3, 7, 21)`.
+For the SGD optimizer, we trained models using the inverse range of $\alpha$ values between (10^-7^, 10^3^), or `numpy.logspace(-7, 3, 21)`.
+These hyperparameter ranges were intended to give evenly distributed coverage across genes that included "underfit" models (predicting only the mean or using very few features, poor performance on all datasets), "overfit" models (performing perfectly on training data but comparatively poorly on cross-validation and test data), and a wide variety of models in between that typically included the best fits to the cross-validation and test data.
+
+For ease of visual comparison in our figures, we plot the SGD $\alpha$ parameter directly, and the `liblinear` $C$ parameter inversely (i.e. $\frac{1}{C}$).
+This orients the x-axes of the relevant plots in the same direction: lower values represent lower regularization strength or higher model complexity, and higher values represent higher regularization strength or lower model complexity, for both optimizers.
+
+### SGD learning rate selection
+
+scikit-learn's `SGDClassifier` provides four built-in approaches to learning rate scheduling: `constant` (a single, constant learning rate), `optimal` (a learning rate with an initial value selected using a heuristic based on the regularization parameter and the data loss, that decreases across epochs), `invscaling` (a learning rate that decreases exponentially by epoch), and `adaptive` (a learning rate that starts at a constant value, which is divided by 5 each time the training loss fails to decrease for 5 straight epochs).
+The `optimal` learning rate schedule is used by default.
+
+When we compared these four approaches, we used a constant learning rate of 0.0005, and an initial learning rate of 0.1 for the `adaptive` and `invscaling` schedules.
+We also tested a fifth approach that we called "`constant_search`", in which we tested a range of constant learning rates in a grid search on a validation dataset, then evaluated the model on the test data using the best-performing constant learning rate by validation AUPR.
+For the grid search, we used the following range of constant learning rates: {0.000005, 0.00001, 0.00005, 0.0001, 0.0005, 0.001, 0.01}.
+Unless otherwise specified, results for SGD in the main paper figures used the `constant_search` approach, which performed the best in our comparison between schedulers.
 
 
 ## Results {.page_break_before}
