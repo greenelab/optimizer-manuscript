@@ -9,7 +9,7 @@ decile
 deciles
 Figshare
 GDC
-Genomic
+genomic
 GISTIC
 GreeneScientist
 hypermutated

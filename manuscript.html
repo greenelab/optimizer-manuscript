@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Jake Crawford" />
   <meta name="author" content="Casey S. Greene" />
-  <meta name="dcterms.date" content="2023-05-16" />
+  <meta name="dcterms.date" content="2023-06-05" />
   <meta name="keywords" content="markdown, publishing, manubot" />
   <title>Optimizers manuscript</title>
   <style>
@@ -51,11 +51,11 @@
   <meta name="citation_title" content="Optimizers manuscript" />
   <meta property="og:title" content="Optimizers manuscript" />
   <meta property="twitter:title" content="Optimizers manuscript" />
-  <meta name="dc.date" content="2023-05-16" />
-  <meta name="citation_publication_date" content="2023-05-16" />
-  <meta property="article:published_time" content="2023-05-16" />
-  <meta name="dc.modified" content="2023-05-16T19:33:32+00:00" />
-  <meta property="article:modified_time" content="2023-05-16T19:33:32+00:00" />
+  <meta name="dc.date" content="2023-06-05" />
+  <meta name="citation_publication_date" content="2023-06-05" />
+  <meta property="article:published_time" content="2023-06-05" />
+  <meta name="dc.modified" content="2023-06-05T13:17:22+00:00" />
+  <meta property="article:modified_time" content="2023-06-05T13:17:22+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -77,9 +77,9 @@
   <meta name="citation_fulltext_html_url" content="https://greenelab.github.io/optimizer-manuscript/" />
   <meta name="citation_pdf_url" content="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/9fd7ac43e314364ee23d155c2bdcef7b040b5f80/" />
-  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/9fd7ac43e314364ee23d155c2bdcef7b040b5f80/" />
-  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/9fd7ac43e314364ee23d155c2bdcef7b040b5f80/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/4471c9681723062bc3b789c3a00c756b3e5167b3/" />
+  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/4471c9681723062bc3b789c3a00c756b3e5167b3/" />
+  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/4471c9681723062bc3b789c3a00c756b3e5167b3/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -96,10 +96,10 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://greenelab.github.io/optimizer-manuscript/v/9fd7ac43e314364ee23d155c2bdcef7b040b5f80/">permalink</a>)
+(<a href="https://greenelab.github.io/optimizer-manuscript/v/4471c9681723062bc3b789c3a00c756b3e5167b3/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/greenelab/optimizer-manuscript/tree/9fd7ac43e314364ee23d155c2bdcef7b040b5f80">greenelab/optimizer-manuscript@9fd7ac4</a>
-on May 16, 2023.
+from <a href="https://github.com/greenelab/optimizer-manuscript/tree/4471c9681723062bc3b789c3a00c756b3e5167b3">greenelab/optimizer-manuscript@4471c96</a>
+on June 5, 2023.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -195,25 +195,27 @@ We then calculated the deciles of this distribution, and binned models by decile
 For some genes, there were enough models with no nonzero coefficients (i.e. dummy regressors/models that just predict the mean) that one or more decile boundaries were exactly 0.
 In these cases, we combined the lower deciles bounded by 0 into a single bin, which resulted in fewer than 10 total bins.</p>
 <h2 class="page_break_before" id="results-1">Results</h2>
+<h3 id="liblinear-and-sgd-lasso-models-perform-comparably-but-liblinear-is-prone-to-overfitting"><code>liblinear</code> and SGD LASSO models perform comparably, but <code>liblinear</code> is prone to overfitting</h3>
 <p>For each of the 125 driver genes from the Vogelstein et al. 2013 paper, we trained models to predict mutation status (presence or absence) from RNA-seq data, derived from the TCGA Pan-Cancer Atlas.
 For each optimizer, we trained LASSO logistic regression models across a variety of regularization parameters (see Methods for parameter range details), for 4 cross-validation splits x 2 replicates (random seeds) for a total of 8 different models per parameter.
 Cross-validation splits were stratified by cancer type.</p>
 <p>Previous work has shown that pan-cancer classifiers of Ras mutation status are accurate and biologically informative <span class="citation" data-cites="17XHtmqPY">[<a href="#ref-17XHtmqPY" role="doc-biblioref">13</a>]</span>.
+We first evaluated models for KRAS mutation prediction.
 As model complexity increases (more nonzero coefficients) for the <code>liblinear</code> optimizer, we observe that performance increases then decreases, corresponding to overfitting for high model complexities/numbers of nonzero coefficients (Figure <a href="#fig:optimizer_compare_mutations">1</a>A).
-.
-On the other hand, for the SGD optimizer, we observe an increase in performance as model complexity increases, with models having no nonzero coefficients performing the best (Figure <a href="#fig:optimizer_compare_mutations">1</a>B).
-In this case, top performance for SGD (the largest bin, i.e. furthest right on the x-axis) is slightly worse than top performance for <code>liblinear</code> (the third smallest bin): we observed a mean test AUPR of 0.618 for SGD vs. mean AUPR of 0.688 for <code>liblinear</code>.
-As model complexity varies, similar performance trends tend to hold across a variety of driver genes in the Vogelstein dataset, and for a variety of approaches to quantifying model complexity (see Supplementary Data).</p>
-<p>To determine if the relative performance improvement with <code>liblinear</code> tends to hold across the genes in the Vogelstein dataset at large, we compared performance for the best-performing models for each gene, between optimizers.
-Figure <a href="#fig:optimizer_compare_mutations">1</a>C shows the distribution of differences in performance across genes.
-The distribution is generally shifted to the right, suggesting that <code>liblinear</code> generally tends to outperform SGD.
-We saw that for 71/84 genes, performance for the best-performing model was better using <code>liblinear</code> than SGD, and for the other 13 genes performance was better using SGD.</p>
+On the other hand, for the SGD optimizer, we observe consistent performance as model complexity increases, with models having no nonzero coefficients performing comparably to the best (Figure <a href="#fig:optimizer_compare_mutations">1</a>B).
+In this case, top performance for SGD (a regularization parameter of 10<sup>-1</sup>) is slightly better than top performance for <code>liblinear</code> (a regularization parameter of 1 / 3.16 x 10<sup>2</sup>): we observed a mean test AUPR of 0.722 for SGD vs. mean AUPR of 0.692 for <code>liblinear</code>.</p>
+<p>To determine how relative performance trends with <code>liblinear</code> tend to compare across the genes in the Vogelstein dataset at large, we looked at the difference in performance between optimizers for the best-performing models for each gene (Figure <a href="#fig:optimizer_compare_mutations">1</a>C).
+The distribution is centered around 0 and more or less symmetrical, suggesting that across the gene set, <code>liblinear</code> and SGD tend to perform comparably to one another.
+We saw that for 52/84 genes, performance for the best-performing model was better using SGD than <code>liblinear</code>, and for the other 32 genes performance was better using <code>liblinear</code>.
+In order to quantify whether the overfitting tendencies (or lack thereof) also hold across the gene set, we plotted the difference in performance between the best-performing model and the largest (least regularized) model; classifiers with a large difference in performance exhibit strong overfitting, and classifiers with a small difference in performance do not overfit (Figure <a href="#fig:optimizer_compare_mutations">1</a>D).
+For SGD, the least regularized models tend to perform comparably to the best-performing models, whereas for <code>liblinear</code> the distribution is wider suggesting that overfitting is more common.</p>
 <div id="fig:optimizer_compare_mutations" class="fignos">
 <figure>
-<img src="images/figure_1.png" style="width:100.0%" alt="Figure 1: A. Performance vs. model complexity (number of nonzero coefficients) for KRAS mutation status prediction, for liblinear optimizer. Bins are derived from deciles of coefficient count distribution across optimizers; additional detail in Methods. “Holdout” dataset is used in panel C and following figures for best-performing model selection, “test” data is completely held out from model selection and used for evaluation in panel C and following figures. B. Performance vs. model complexity (number of nonzero coefficients) for KRAS mutation status prediction, for SGD optimizer. C. Distribution of performance difference between best-performing model for liblinear and SGD optimizers, across all 84 genes in Vogelstein driver gene set. Positive numbers on the x-axis indicate better performance using liblinear, and negative numbers indicate better performance using SGD." />
-<figcaption aria-hidden="true"><span>Figure 1:</span> <strong>A.</strong> Performance vs. model complexity (number of nonzero coefficients) for KRAS mutation status prediction, for <code>liblinear</code> optimizer. Bins are derived from deciles of coefficient count distribution across optimizers; additional detail in Methods. “Holdout” dataset is used in panel C and following figures for best-performing model selection, “test” data is completely held out from model selection and used for evaluation in panel C and following figures.
+<img src="images/figure_1.png" style="width:100.0%" alt="Figure 1: A. Performance vs. model complexity (number of nonzero coefficients) for KRAS mutation status prediction, for liblinear optimizer. “Holdout” dataset is used for SGD learning rate selection, “test” data is completely held out from model selection and used for evaluation. Dotted lines indicate top performance value of the opposite optimizer. B. Performance vs. model complexity (number of nonzero coefficients) for KRAS mutation status prediction, for SGD optimizer. C. Distribution of performance difference between best-performing model for liblinear and SGD optimizers, across all 84 genes in Vogelstein driver gene set. Positive numbers on the x-axis indicate better performance using liblinear, and negative numbers indicate better performance using SGD. D. Distribution of performance difference between best-performing model and largest (least regularized) model, for liblinear and SGD, across all 84 genes. Smaller numbers on the y-axis indicate less overfitting, and larger numbers indicate more overfitting." />
+<figcaption aria-hidden="true"><span>Figure 1:</span> <strong>A.</strong> Performance vs. model complexity (number of nonzero coefficients) for KRAS mutation status prediction, for <code>liblinear</code> optimizer. “Holdout” dataset is used for SGD learning rate selection, “test” data is completely held out from model selection and used for evaluation. Dotted lines indicate top performance value of the opposite optimizer.
 <strong>B.</strong> Performance vs. model complexity (number of nonzero coefficients) for KRAS mutation status prediction, for SGD optimizer.
-<strong>C.</strong> Distribution of performance difference between best-performing model for <code>liblinear</code> and SGD optimizers, across all 84 genes in Vogelstein driver gene set. Positive numbers on the x-axis indicate better performance using <code>liblinear</code>, and negative numbers indicate better performance using SGD.</figcaption>
+<strong>C.</strong> Distribution of performance difference between best-performing model for <code>liblinear</code> and SGD optimizers, across all 84 genes in Vogelstein driver gene set. Positive numbers on the x-axis indicate better performance using <code>liblinear</code>, and negative numbers indicate better performance using SGD.
+<strong>D.</strong> Distribution of performance difference between best-performing model and largest (least regularized) model, for <code>liblinear</code> and SGD, across all 84 genes. Smaller numbers on the y-axis indicate less overfitting, and larger numbers indicate more overfitting.</figcaption>
 </figure>
 </div>
 <p>We next sought to determine whether there was a difference in the magnitudes of coefficients in the models resulting from the different optimization schemes.
