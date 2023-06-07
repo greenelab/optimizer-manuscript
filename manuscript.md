@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2023-06-05'
+date-meta: '2023-06-07'
 author-meta:
 - Jake Crawford
 - Casey S. Greene
@@ -20,11 +20,11 @@ header-includes: |
   <meta name="citation_title" content="Optimizers manuscript" />
   <meta property="og:title" content="Optimizers manuscript" />
   <meta property="twitter:title" content="Optimizers manuscript" />
-  <meta name="dc.date" content="2023-06-05" />
-  <meta name="citation_publication_date" content="2023-06-05" />
-  <meta property="article:published_time" content="2023-06-05" />
-  <meta name="dc.modified" content="2023-06-05T17:26:04+00:00" />
-  <meta property="article:modified_time" content="2023-06-05T17:26:04+00:00" />
+  <meta name="dc.date" content="2023-06-07" />
+  <meta name="citation_publication_date" content="2023-06-07" />
+  <meta property="article:published_time" content="2023-06-07" />
+  <meta name="dc.modified" content="2023-06-07T13:37:53+00:00" />
+  <meta property="article:modified_time" content="2023-06-07T13:37:53+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -46,9 +46,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://greenelab.github.io/optimizer-manuscript/" />
   <meta name="citation_pdf_url" content="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/b1665fca5a0acd4bbe445ebdf625eeb5f7a201d4/" />
-  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/b1665fca5a0acd4bbe445ebdf625eeb5f7a201d4/" />
-  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/b1665fca5a0acd4bbe445ebdf625eeb5f7a201d4/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/430c5a09cdc563d01d51779dd717bc0915c0409a/" />
+  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/430c5a09cdc563d01d51779dd717bc0915c0409a/" />
+  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/430c5a09cdc563d01d51779dd717bc0915c0409a/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -70,10 +70,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/optimizer-manuscript/v/b1665fca5a0acd4bbe445ebdf625eeb5f7a201d4/))
+([permalink](https://greenelab.github.io/optimizer-manuscript/v/430c5a09cdc563d01d51779dd717bc0915c0409a/))
 was automatically generated
-from [greenelab/optimizer-manuscript@b1665fc](https://github.com/greenelab/optimizer-manuscript/tree/b1665fca5a0acd4bbe445ebdf625eeb5f7a201d4)
-on June 5, 2023.
+from [greenelab/optimizer-manuscript@430c5a0](https://github.com/greenelab/optimizer-manuscript/tree/430c5a09cdc563d01d51779dd717bc0915c0409a)
+on June 7, 2023.
 </em></small>
 
 
@@ -247,11 +247,27 @@ In order to quantify whether the overfitting tendencies (or lack thereof) also h
 For SGD, the least regularized models tend to perform comparably to the best-performing models, whereas for `liblinear` the distribution is wider suggesting that overfitting is more common.
 
 ![
-**A.** Performance vs. model complexity (number of nonzero coefficients) for KRAS mutation status prediction, for `liblinear` optimizer. "Holdout" dataset is used for SGD learning rate selection, "test" data is completely held out from model selection and used for evaluation. Dotted lines indicate top performance value of the opposite optimizer.
-**B.** Performance vs. model complexity (number of nonzero coefficients) for KRAS mutation status prediction, for SGD optimizer.
+**A.** Performance vs. inverse regularization parameter for KRAS mutation status prediction, using the `liblinear` coordinate descent optimizer. Dotted lines indicate top performance value of the opposite optimizer.
+**B.** Performance vs. regularization parameter for KRAS mutation status prediction, using the SGD optimizer. "Holdout" dataset is used for SGD learning rate selection, "test" data is completely held out from model selection and used for evaluation.
 **C.** Distribution of performance difference between best-performing model for `liblinear` and SGD optimizers, across all 84 genes in Vogelstein driver gene set. Positive numbers on the x-axis indicate better performance using `liblinear`, and negative numbers indicate better performance using SGD.
 **D.** Distribution of performance difference between best-performing model and largest (least regularized) model, for `liblinear` and SGD, across all 84 genes. Smaller numbers on the y-axis indicate less overfitting, and larger numbers indicate more overfitting.
 ](images/figure_1.png){#fig:optimizer_compare_mutations width="100%"}
+
+### SGD is sensitive to learning rate selection
+
+The SGD results shown in Figure {@fig:optimizer_compare_mutations} select the best-performing learning rate using a grid search on the holdout dataset, independently for each regularization parameter.
+We also compared against other learning rate scheduling approaches implemented in scikit-learn (see Methods for implementation details and grid search specifications).
+For KRAS mutation prediction, we observed that the choice of initial learning rate and scheduling approach affects performance significantly, and other approaches to selecting the learning rate performed poorly relative to `liblinear` (black dotted lines in Figure {@fig:sgd_lr_schedulers}) and to the grid search.
+We did not observe an improvement in performance over `liblinear` or the grid search for learning rate schedulers that decrease across epochs (Figure {@fig:sgd_lr_schedulers}A, C, and D), nor did we see comparable performance when we selected a single constant learning rate for all levels of regularization without the preceding grid search (Figure {@fig:sgd_lr_schedulers}B).
+Notably, scikit-learn's default "optimal" learning rate schedule performed relatively poorly for this problem, suggesting that tuning the learning rate and selecting a well-performing scheduler is a critical component of applying SGD successfully for this problem (Figure {@fig:sgd_lr_schedulers}D).
+We observed similar trends across all genes in the Vogelstein gene set, with other learning rate scheduling approaches performing poorly in aggregate relative to both `liblinear` and SGD with the learning rate grid search (Supplementary Figure TODO).
+
+![
+**A.** Performance vs. regularization parameter for KRAS mutation prediction, using SGD optimizer with adaptive learning rate scheduler. Dotted line indicates top performance value using `liblinear`, from Figure {@fig:optimizer_compare_mutations}A.
+**B.** Performance vs. regularization parameter, using SGD optimizer with constant learning rate scheduler and a learning rate of 0.0005.
+**C.** Performance vs. regularization parameter, using SGD optimizer with inverse scaling learning rate scheduler.
+**D.** Performance vs. regularization parameter, using SGD optimizer with "optimal" learning rate scheduler.
+](images/figure_2.png){#fig:sgd_lr_schedulers width="100%"}
 
 We next sought to determine whether there was a difference in the magnitudes of coefficients in the models resulting from the different optimization schemes.
 Following up on the trend in Figure {@fig:optimizer_compare_mutations}, where we saw that the best-performing SGD model had many nonzero coefficients, we also see that in general across all genes, the best-performing SGD models tend to be bimodal, sometimes having few nonzero coefficients but often having many/all nonzero coefficients (Figure {@fig:optimizer_coefs}A).
@@ -264,7 +280,7 @@ This emphasizes that the different optimization methods result in fundamentally 
 ![
 **A.** Distribution across genes of the number of nonzero coefficients included in best-performing LASSO logistic regression models. Violin plot density estimations are clipped at the ends of the observed data range, and boxes show the median/IQR.
 **B.** Distribution of coefficient magnitudes for a single KRAS mutation prediction model (random seed 42, first cross-validation split), colored by optimizer. The x-axis shows the base-10 logarithm of the absolute value of each coefficient + 1 (since some coefficients are exactly 0), and the y-axis shows the base-10 log of the count of coefficients in each bin. Other random seeds and cross-validation splits are similar.
-](images/figure_2.png){#fig:optimizer_coefs width="80%"}
+](images/figure_3.png){#fig:optimizer_coefs width="100%"}
 
 
 ## Discussion {.page_break_before}

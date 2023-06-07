@@ -9,7 +9,7 @@ decile
 deciles
 Figshare
 GDC
-Genomic
+genomic
 GISTIC
 GreeneScientist
 hypermutated
@@ -37,6 +37,7 @@ SGD
 subtrain
 TCGA
 Thresholded
+TODO
 transcriptomic
 tunable
 underfit
