@@ -1,10 +1,11 @@
 ---
-title: "Optimizers manuscript"
+title: "Optimizer's dilemma: optimization strongly influences model selection in transcriptomic prediction"
 date: null
 keywords:
-  - markdown
-  - publishing
-  - manubot
+  - gene expression
+  - machine learning
+  - cancer genomics
+  - optimization
 lang: en-US
 authors:
   - github: jjc2718
