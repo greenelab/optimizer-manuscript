@@ -1,11 +1,12 @@
 ---
-title: Optimizers manuscript
+title: 'Optimizer''s dilemma: optimization strongly influences model selection in transcriptomic prediction'
 keywords:
-- markdown
-- publishing
-- manubot
+- gene expression
+- machine learning
+- cancer genomics
+- optimization
 lang: en-US
-date-meta: '2023-06-07'
+date-meta: '2023-06-08'
 author-meta:
 - Jake Crawford
 - Casey S. Greene
@@ -16,15 +17,15 @@ header-includes: |
   -->
   <meta name="dc.format" content="text/html" />
   <meta property="og:type" content="article" />
-  <meta name="dc.title" content="Optimizers manuscript" />
-  <meta name="citation_title" content="Optimizers manuscript" />
-  <meta property="og:title" content="Optimizers manuscript" />
-  <meta property="twitter:title" content="Optimizers manuscript" />
-  <meta name="dc.date" content="2023-06-07" />
-  <meta name="citation_publication_date" content="2023-06-07" />
-  <meta property="article:published_time" content="2023-06-07" />
-  <meta name="dc.modified" content="2023-06-07T13:37:53+00:00" />
-  <meta property="article:modified_time" content="2023-06-07T13:37:53+00:00" />
+  <meta name="dc.title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
+  <meta name="citation_title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
+  <meta property="og:title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
+  <meta property="twitter:title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
+  <meta name="dc.date" content="2023-06-08" />
+  <meta name="citation_publication_date" content="2023-06-08" />
+  <meta property="article:published_time" content="2023-06-08" />
+  <meta name="dc.modified" content="2023-06-08T17:10:52+00:00" />
+  <meta property="article:modified_time" content="2023-06-08T17:10:52+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -46,9 +47,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://greenelab.github.io/optimizer-manuscript/" />
   <meta name="citation_pdf_url" content="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/430c5a09cdc563d01d51779dd717bc0915c0409a/" />
-  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/430c5a09cdc563d01d51779dd717bc0915c0409a/" />
-  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/430c5a09cdc563d01d51779dd717bc0915c0409a/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/877e0561e73faa0aa82f915a5ec7682703668d92/" />
+  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/877e0561e73faa0aa82f915a5ec7682703668d92/" />
+  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/877e0561e73faa0aa82f915a5ec7682703668d92/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -70,10 +71,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/optimizer-manuscript/v/430c5a09cdc563d01d51779dd717bc0915c0409a/))
+([permalink](https://greenelab.github.io/optimizer-manuscript/v/877e0561e73faa0aa82f915a5ec7682703668d92/))
 was automatically generated
-from [greenelab/optimizer-manuscript@430c5a0](https://github.com/greenelab/optimizer-manuscript/tree/430c5a09cdc563d01d51779dd717bc0915c0409a)
-on June 7, 2023.
+from [greenelab/optimizer-manuscript@877e056](https://github.com/greenelab/optimizer-manuscript/tree/877e0561e73faa0aa82f915a5ec7682703668d92)
+on June 8, 2023.
 </em></small>
 
 
@@ -129,10 +130,9 @@ Across varying levels of regularization, we compared performance and model spars
 
 ### Results
 
-In general, we found that coordinate descent (implemented in the `liblinear` library) tended to outperform SGD for the best-performing level of regularization.
-For most driver genes, the best-performing `liblinear` model was more highly regularized than the best-performing SGD model.
-Moreover, SGD models generally resisted overfitting as regularization strength decreased and model complexity increased.
-While the `liblinear` results for this problem match the conventional wisdom cautioning against overfitting, the SGD results contradict it.
+In general, we found that coordinate descent (implemented in the `liblinear` library) and SGD tended to perform comparably after model selection and tuning.
+However, SGD models generally resisted overfitting as regularization strength decreased and model complexity increased, and `liblinear` models tended to be less robust to overfitting.
+We also found that learning rate tuning on a held-out dataset was critical for SGD to achieve competitive performance with `liblinear`.
 We believe that the choice of optimizers should be clearly reported as a part of the model selection and validation process, to allow readers and reviewers to better understand the context in which results have been generated.
 
 ### Availability and implementation
@@ -151,11 +151,11 @@ The widely used scikit-learn Python package for machine learning [@url:https://j
 Using scikit-learn, we compared the `liblinear` (coordinate descent) and SGD optimization techniques for prediction of driver mutation status in tumor samples, across a wide variety of genes implicated in cancer initiation and development [@doi:10.1126/science.1235122].
 We applied LASSO (L1-regularized) logistic regression, and tuned the strength of the regularization to compare model selection between optimizers.
 We found that across a variety of models (i.e. varying regularization strengths), the training dynamics of the optimizers were considerably different: models fit using `liblinear` tended to perform best at fairly high regularization strengths (100-1000 nonzero features in the model) and overfit easily with low regularization strengths.
-On the other hand, models fit using stochastic gradient descent tended to perform best at fairly low regularization strengths (10000+ nonzero features in the model), and overfitting was uncommon.
+On the other hand, after tuning the learning rate, models fit using SGD tended to perform well across both higher and lower regularization strengths, and overfitting was less common.
 
 Our results caution against viewing optimizer choice as a "black box" component of machine learning modeling.
-The observation that LASSO logistic regression models fit using SGD tended to perform best for low levels of regularization, across diverse driver genes, runs counter to conventional wisdom in machine learning for high-dimensional data which generally states that explicit regularization and/or feature selection is necessary.
-Comparing optimizers/model implementations directly is rare in applications of machine learning for genomics, and our work shows that this choice can affect generalization and interpretation properties of the model significantly.
+The observation that LASSO logistic regression models fit using SGD tended to perform well for low levels of regularization, across diverse driver genes, runs counter to conventional wisdom in machine learning for high-dimensional data which generally states that explicit regularization and/or feature selection is necessary.
+Comparing optimizers or model implementations directly is rare in applications of machine learning for genomics, and our work shows that this choice can affect generalization and interpretation properties of the model significantly.
 Based on our results, we recommend considering the appropriate optimization approach carefully based on the goals of each individual analysis.
 
 
