@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Jake Crawford" />
   <meta name="author" content="Casey S. Greene" />
-  <meta name="dcterms.date" content="2023-06-07" />
-  <meta name="keywords" content="markdown, publishing, manubot" />
-  <title>Optimizers manuscript</title>
+  <meta name="dcterms.date" content="2023-06-08" />
+  <meta name="keywords" content="gene expression, machine learning, cancer genomics, optimization" />
+  <title>Optimizer’s dilemma: optimization strongly influences model selection in transcriptomic prediction</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -47,15 +47,15 @@
   -->
   <meta name="dc.format" content="text/html" />
   <meta property="og:type" content="article" />
-  <meta name="dc.title" content="Optimizers manuscript" />
-  <meta name="citation_title" content="Optimizers manuscript" />
-  <meta property="og:title" content="Optimizers manuscript" />
-  <meta property="twitter:title" content="Optimizers manuscript" />
-  <meta name="dc.date" content="2023-06-07" />
-  <meta name="citation_publication_date" content="2023-06-07" />
-  <meta property="article:published_time" content="2023-06-07" />
-  <meta name="dc.modified" content="2023-06-07T13:37:53+00:00" />
-  <meta property="article:modified_time" content="2023-06-07T13:37:53+00:00" />
+  <meta name="dc.title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
+  <meta name="citation_title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
+  <meta property="og:title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
+  <meta property="twitter:title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
+  <meta name="dc.date" content="2023-06-08" />
+  <meta name="citation_publication_date" content="2023-06-08" />
+  <meta property="article:published_time" content="2023-06-08" />
+  <meta name="dc.modified" content="2023-06-08T17:10:52+00:00" />
+  <meta property="article:modified_time" content="2023-06-08T17:10:52+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -77,9 +77,9 @@
   <meta name="citation_fulltext_html_url" content="https://greenelab.github.io/optimizer-manuscript/" />
   <meta name="citation_pdf_url" content="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/430c5a09cdc563d01d51779dd717bc0915c0409a/" />
-  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/430c5a09cdc563d01d51779dd717bc0915c0409a/" />
-  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/430c5a09cdc563d01d51779dd717bc0915c0409a/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/877e0561e73faa0aa82f915a5ec7682703668d92/" />
+  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/877e0561e73faa0aa82f915a5ec7682703668d92/" />
+  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/877e0561e73faa0aa82f915a5ec7682703668d92/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -92,14 +92,14 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Optimizers manuscript</h1>
+<h1 class="title">Optimizer’s dilemma: optimization strongly influences model selection in transcriptomic prediction</h1>
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://greenelab.github.io/optimizer-manuscript/v/430c5a09cdc563d01d51779dd717bc0915c0409a/">permalink</a>)
+(<a href="https://greenelab.github.io/optimizer-manuscript/v/877e0561e73faa0aa82f915a5ec7682703668d92/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/greenelab/optimizer-manuscript/tree/430c5a09cdc563d01d51779dd717bc0915c0409a">greenelab/optimizer-manuscript@430c5a0</a>
-on June 7, 2023.
+from <a href="https://github.com/greenelab/optimizer-manuscript/tree/877e0561e73faa0aa82f915a5ec7682703668d92">greenelab/optimizer-manuscript@877e056</a>
+on June 8, 2023.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -140,10 +140,9 @@ While model choice is frequently reported in machine-learning-based research, op
 We applied two different implementations of LASSO logistic regression implemented in Python’s scikit-learn package, using two different optimization approaches (coordinate descent and stochastic gradient descent), to predict driver mutation presence or absence from gene expression across 84 pan-cancer driver genes.
 Across varying levels of regularization, we compared performance and model sparsity between optimizers.</p>
 <h3 id="results">Results</h3>
-<p>In general, we found that coordinate descent (implemented in the <code>liblinear</code> library) tended to outperform SGD for the best-performing level of regularization.
-For most driver genes, the best-performing <code>liblinear</code> model was more highly regularized than the best-performing SGD model.
-Moreover, SGD models generally resisted overfitting as regularization strength decreased and model complexity increased.
-While the <code>liblinear</code> results for this problem match the conventional wisdom cautioning against overfitting, the SGD results contradict it.
+<p>In general, we found that coordinate descent (implemented in the <code>liblinear</code> library) and SGD tended to perform comparably after model selection and tuning.
+However, SGD models generally resisted overfitting as regularization strength decreased and model complexity increased, and <code>liblinear</code> models tended to be less robust to overfitting.
+We also found that learning rate tuning on a held-out dataset was critical for SGD to achieve competitive performance with <code>liblinear</code>.
 We believe that the choice of optimizers should be clearly reported as a part of the model selection and validation process, to allow readers and reviewers to better understand the context in which results have been generated.</p>
 <h3 id="availability-and-implementation">Availability and implementation</h3>
 <p>The code used to carry out the analyses in this study is available at <a href="https://github.com/greenelab/pancancer-evaluation/tree/master/01_stratified_classification" class="uri">https://github.com/greenelab/pancancer-evaluation/tree/master/01_stratified_classification</a>. Performance/regularization strength curves for all genes in the Vogelstein et al. 2013 dataset are available at <a href="https://doi.org/10.6084/m9.figshare.22728644" class="uri">https://doi.org/10.6084/m9.figshare.22728644</a>.</p>
@@ -156,10 +155,10 @@ The widely used scikit-learn Python package for machine learning <span class="ci
 <p>Using scikit-learn, we compared the <code>liblinear</code> (coordinate descent) and SGD optimization techniques for prediction of driver mutation status in tumor samples, across a wide variety of genes implicated in cancer initiation and development <span class="citation" data-cites="809OyWlC">[<a href="#ref-809OyWlC" role="doc-biblioref">8</a>]</span>.
 We applied LASSO (L1-regularized) logistic regression, and tuned the strength of the regularization to compare model selection between optimizers.
 We found that across a variety of models (i.e. varying regularization strengths), the training dynamics of the optimizers were considerably different: models fit using <code>liblinear</code> tended to perform best at fairly high regularization strengths (100-1000 nonzero features in the model) and overfit easily with low regularization strengths.
-On the other hand, models fit using stochastic gradient descent tended to perform best at fairly low regularization strengths (10000+ nonzero features in the model), and overfitting was uncommon.</p>
+On the other hand, after tuning the learning rate, models fit using SGD tended to perform well across both higher and lower regularization strengths, and overfitting was less common.</p>
 <p>Our results caution against viewing optimizer choice as a “black box” component of machine learning modeling.
-The observation that LASSO logistic regression models fit using SGD tended to perform best for low levels of regularization, across diverse driver genes, runs counter to conventional wisdom in machine learning for high-dimensional data which generally states that explicit regularization and/or feature selection is necessary.
-Comparing optimizers/model implementations directly is rare in applications of machine learning for genomics, and our work shows that this choice can affect generalization and interpretation properties of the model significantly.
+The observation that LASSO logistic regression models fit using SGD tended to perform well for low levels of regularization, across diverse driver genes, runs counter to conventional wisdom in machine learning for high-dimensional data which generally states that explicit regularization and/or feature selection is necessary.
+Comparing optimizers or model implementations directly is rare in applications of machine learning for genomics, and our work shows that this choice can affect generalization and interpretation properties of the model significantly.
 Based on our results, we recommend considering the appropriate optimization approach carefully based on the goals of each individual analysis.</p>
 <h2 class="page_break_before" id="methods">Methods</h2>
 <h3 id="data-download-and-preprocessing">Data download and preprocessing</h3>
