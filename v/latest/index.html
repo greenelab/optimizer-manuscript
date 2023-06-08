@@ -54,8 +54,8 @@
   <meta name="dc.date" content="2023-06-08" />
   <meta name="citation_publication_date" content="2023-06-08" />
   <meta property="article:published_time" content="2023-06-08" />
-  <meta name="dc.modified" content="2023-06-08T17:10:52+00:00" />
-  <meta property="article:modified_time" content="2023-06-08T17:10:52+00:00" />
+  <meta name="dc.modified" content="2023-06-08T17:18:27+00:00" />
+  <meta property="article:modified_time" content="2023-06-08T17:18:27+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -77,9 +77,9 @@
   <meta name="citation_fulltext_html_url" content="https://greenelab.github.io/optimizer-manuscript/" />
   <meta name="citation_pdf_url" content="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/877e0561e73faa0aa82f915a5ec7682703668d92/" />
-  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/877e0561e73faa0aa82f915a5ec7682703668d92/" />
-  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/877e0561e73faa0aa82f915a5ec7682703668d92/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/bc5ef687b9df3e772a7d48a287b4426e5abadd78/" />
+  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/bc5ef687b9df3e772a7d48a287b4426e5abadd78/" />
+  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/bc5ef687b9df3e772a7d48a287b4426e5abadd78/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -96,9 +96,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://greenelab.github.io/optimizer-manuscript/v/877e0561e73faa0aa82f915a5ec7682703668d92/">permalink</a>)
+(<a href="https://greenelab.github.io/optimizer-manuscript/v/bc5ef687b9df3e772a7d48a287b4426e5abadd78/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/greenelab/optimizer-manuscript/tree/877e0561e73faa0aa82f915a5ec7682703668d92">greenelab/optimizer-manuscript@877e056</a>
+from <a href="https://github.com/greenelab/optimizer-manuscript/tree/bc5ef687b9df3e772a7d48a287b4426e5abadd78">greenelab/optimizer-manuscript@bc5ef68</a>
 on June 8, 2023.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -212,8 +212,8 @@ For each optimizer, we trained LASSO logistic regression models across a variety
 Cross-validation splits were stratified by cancer type.</p>
 <p>Previous work has shown that pan-cancer classifiers of Ras mutation status are accurate and biologically informative <span class="citation" data-cites="17XHtmqPY">[<a href="#ref-17XHtmqPY" role="doc-biblioref">13</a>]</span>.
 We first evaluated models for KRAS mutation prediction.
-As model complexity increases (more nonzero coefficients) for the <code>liblinear</code> optimizer, we observe that performance increases then decreases, corresponding to overfitting for high model complexities/numbers of nonzero coefficients (Figure <a href="#fig:optimizer_compare_mutations">1</a>A).
-On the other hand, for the SGD optimizer, we observe consistent performance as model complexity increases, with models having no nonzero coefficients performing comparably to the best (Figure <a href="#fig:optimizer_compare_mutations">1</a>B).
+As model complexity increases (more nonzero coefficients) for the <code>liblinear</code> optimizer, we observed that performance increases then decreases, corresponding to overfitting for high model complexities/numbers of nonzero coefficients (Figure <a href="#fig:optimizer_compare_mutations">1</a>A).
+On the other hand, for the SGD optimizer, we observed consistent performance as model complexity increases, with models having no nonzero coefficients performing comparably to the best (Figure <a href="#fig:optimizer_compare_mutations">1</a>B).
 In this case, top performance for SGD (a regularization parameter of 10<sup>-1</sup>) is slightly better than top performance for <code>liblinear</code> (a regularization parameter of 1 / 3.16 x 10<sup>2</sup>): we observed a mean test AUPR of 0.722 for SGD vs. mean AUPR of 0.692 for <code>liblinear</code>.</p>
 <p>To determine how relative performance trends with <code>liblinear</code> tend to compare across the genes in the Vogelstein dataset at large, we looked at the difference in performance between optimizers for the best-performing models for each gene (Figure <a href="#fig:optimizer_compare_mutations">1</a>C).
 The distribution is centered around 0 and more or less symmetrical, suggesting that across the gene set, <code>liblinear</code> and SGD tend to perform comparably to one another.
@@ -245,17 +245,24 @@ We observed similar trends across all genes in the Vogelstein gene set, with oth
 <strong>D.</strong> Performance vs. regularization parameter, using SGD optimizer with “optimal” learning rate scheduler.</figcaption>
 </figure>
 </div>
-<p>We next sought to determine whether there was a difference in the magnitudes of coefficients in the models resulting from the different optimization schemes.
-Following up on the trend in Figure <a href="#fig:optimizer_compare_mutations">1</a>, where we saw that the best-performing SGD model had many nonzero coefficients, we also see that in general across all genes, the best-performing SGD models tend to be bimodal, sometimes having few nonzero coefficients but often having many/all nonzero coefficients (Figure <a href="#fig:optimizer_coefs">3</a>A).
-By contrast, the <code>liblinear</code> models are almost always much sparser with fewer than 2500 nonzero coefficients, out of ~16100 total input features.</p>
-<p>Despite the SGD models performing best with many nonzero coefficients, it could be the case that many of the coefficients could be “effectively” 0, or uninformative to the final model.
-However, Figure <a href="#fig:optimizer_coefs">3</a>B provides evidence that this is not the case, with most coefficients in the best-performing KRAS mutation prediction model using SGD being considerably larger than the coefficients in the best-performing model using <code>liblinear</code>, and very few close to 0.
-This emphasizes that the different optimization methods result in fundamentally different models, relying on different numbers of features with nonzero coefficients in different magnitudes, rather than converging to similar models.</p>
+<h3 id="sgd-and-liblinear-result-in-different-models-with-varying-loss-dynamics">SGD and <code>liblinear</code> result in different models, with varying loss dynamics</h3>
+<p>We sought to determine whether there was a difference in the sparsity of the models resulting from the different optimization schemes.
+In general across all genes, the best-performing SGD models mostly tend to have many nonzero coefficients, but with a distinct positive tail, sometimes having few nonzero coefficients.
+By contrast, the <code>liblinear</code> models are generally sparser with fewer than 2500 nonzero coefficients, out of ~16100 total input features, and a much narrower tail (Figure <a href="#fig:optimizer_coefs">3</a>A).
+The sum of the coefficient magnitudes, however, tends to be smaller on average across all levels of regularization for SGD than for <code>liblinear</code> (Figure <a href="#fig:optimizer_coefs">3</a>B).
+These results suggest that the models fit by <code>liblinear</code> and SGD navigate the tradeoff between bias and variance in slightly different ways: <code>liblinear</code> tends to produce sparser models (more zero coefficients) as regularization increases, but SGD coefficients tend to have smaller overall magnitudes as regularization increases.</p>
+<p>We also compared the components of the loss function across different levels of regularization between optimizers.
+The LASSO logistic regression loss function can be broken down into a data-dependent component (the log-loss) and a parameter magnitude dependent component (the L1 penalty), which are added to get the total loss that is minimized by each optimizer; see Methods for additional details.
+As regularization strength decreases for <code>liblinear</code>, the data loss collapses to near 0, and the L1 penalty dominates the overall loss (Figure <a href="#fig:optimizer_coefs">3</a>C).
+For SGD, on the other hand, the data loss decreases slightly as regularization strength decreases but remains relatively high (Figure <a href="#fig:optimizer_coefs">3</a>D).
+Other SGD learning rate schedules have similar loss curves to the <code>liblinear</code> results, although this does not result in improved classification performance (Supplementary Figure TODO).</p>
 <div id="fig:optimizer_coefs" class="fignos">
 <figure>
-<img src="images/figure_3.png" style="width:100.0%" alt="Figure 3: A. Distribution across genes of the number of nonzero coefficients included in best-performing LASSO logistic regression models. Violin plot density estimations are clipped at the ends of the observed data range, and boxes show the median/IQR. B. Distribution of coefficient magnitudes for a single KRAS mutation prediction model (random seed 42, first cross-validation split), colored by optimizer. The x-axis shows the base-10 logarithm of the absolute value of each coefficient + 1 (since some coefficients are exactly 0), and the y-axis shows the base-10 log of the count of coefficients in each bin. Other random seeds and cross-validation splits are similar." />
+<img src="images/figure_3.png" style="width:100.0%" alt="Figure 3: A. Distribution across genes of the number of nonzero coefficients included in best-performing LASSO logistic regression models. Violin plot density estimations are clipped at the ends of the observed data range, and boxes show the median/IQR. B. Distribution across genes of the sum of model coefficient weights for best-performing LASSO logistic regression models. C. Decomposition of loss function for models fit using liblinear across regularization levels. D. Decomposition of loss function for models fit using SGD across regularization levels." />
 <figcaption aria-hidden="true"><span>Figure 3:</span> <strong>A.</strong> Distribution across genes of the number of nonzero coefficients included in best-performing LASSO logistic regression models. Violin plot density estimations are clipped at the ends of the observed data range, and boxes show the median/IQR.
-<strong>B.</strong> Distribution of coefficient magnitudes for a single KRAS mutation prediction model (random seed 42, first cross-validation split), colored by optimizer. The x-axis shows the base-10 logarithm of the absolute value of each coefficient + 1 (since some coefficients are exactly 0), and the y-axis shows the base-10 log of the count of coefficients in each bin. Other random seeds and cross-validation splits are similar.</figcaption>
+<strong>B.</strong> Distribution across genes of the sum of model coefficient weights for best-performing LASSO logistic regression models.
+<strong>C.</strong> Decomposition of loss function for models fit using <code>liblinear</code> across regularization levels.
+<strong>D.</strong> Decomposition of loss function for models fit using SGD across regularization levels.</figcaption>
 </figure>
 </div>
 <h2 class="page_break_before" id="discussion">Discussion</h2>
