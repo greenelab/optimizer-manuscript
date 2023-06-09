@@ -1,12 +1,11 @@
 arxiv
 AUPR
 cgreene
+coef
 coefs
 covariates
 dataset
 datasets
-decile
-deciles
 Figshare
 GDC
 Genomic
@@ -25,7 +24,6 @@ overfit
 overfitting
 parameterization
 parameterizations
-perf
 preclinical
 preclinically
 preprocess
@@ -33,13 +31,13 @@ preprocessing
 Ras
 rtw
 scikit
-SGD
+sgd
 subtrain
 TCGA
 Thresholded
-TODO
 tradeoff
 transcriptomic
 tunable
 underfit
+untransformed
 Vogelstein
