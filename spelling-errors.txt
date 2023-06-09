@@ -8,11 +8,13 @@ dataset
 datasets
 Figshare
 GDC
-Genomic
+genomic
 GISTIC
 GreeneScientist
+HTC
 hypermutated
 hyperparameter
+hyperparameters
 IQR
 jjc
 KRAS
@@ -22,6 +24,7 @@ omics
 optimizers
 overfit
 overfitting
+overparametrized
 parameterization
 parameterizations
 preclinical
@@ -36,7 +39,9 @@ subtrain
 TCGA
 Thresholded
 tradeoff
+tradeoffs
 transcriptomic
+transcriptomics
 tunable
 underfit
 untransformed
