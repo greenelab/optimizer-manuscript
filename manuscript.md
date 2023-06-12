@@ -6,7 +6,7 @@ keywords:
 - cancer genomics
 - optimization
 lang: en-US
-date-meta: '2023-06-09'
+date-meta: '2023-06-12'
 author-meta:
 - Jake Crawford
 - Casey S. Greene
@@ -21,11 +21,11 @@ header-includes: |
   <meta name="citation_title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
   <meta property="og:title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
   <meta property="twitter:title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
-  <meta name="dc.date" content="2023-06-09" />
-  <meta name="citation_publication_date" content="2023-06-09" />
-  <meta property="article:published_time" content="2023-06-09" />
-  <meta name="dc.modified" content="2023-06-09T13:55:50+00:00" />
-  <meta property="article:modified_time" content="2023-06-09T13:55:50+00:00" />
+  <meta name="dc.date" content="2023-06-12" />
+  <meta name="citation_publication_date" content="2023-06-12" />
+  <meta property="article:published_time" content="2023-06-12" />
+  <meta name="dc.modified" content="2023-06-12T20:00:13+00:00" />
+  <meta property="article:modified_time" content="2023-06-12T20:00:13+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -47,9 +47,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://greenelab.github.io/optimizer-manuscript/" />
   <meta name="citation_pdf_url" content="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/b4b9aa192f33dfc6cf2260efb08d7bd474a7c3d4/" />
-  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/b4b9aa192f33dfc6cf2260efb08d7bd474a7c3d4/" />
-  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/b4b9aa192f33dfc6cf2260efb08d7bd474a7c3d4/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/dc0ba8e429fcc9cc4dc6e06328d692b9679d7263/" />
+  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/dc0ba8e429fcc9cc4dc6e06328d692b9679d7263/" />
+  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/dc0ba8e429fcc9cc4dc6e06328d692b9679d7263/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -71,10 +71,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/optimizer-manuscript/v/b4b9aa192f33dfc6cf2260efb08d7bd474a7c3d4/))
+([permalink](https://greenelab.github.io/optimizer-manuscript/v/dc0ba8e429fcc9cc4dc6e06328d692b9679d7263/))
 was automatically generated
-from [greenelab/optimizer-manuscript@b4b9aa1](https://github.com/greenelab/optimizer-manuscript/tree/b4b9aa192f33dfc6cf2260efb08d7bd474a7c3d4)
-on June 9, 2023.
+from [greenelab/optimizer-manuscript@dc0ba8e](https://github.com/greenelab/optimizer-manuscript/tree/dc0ba8e429fcc9cc4dc6e06328d692b9679d7263)
+on June 12, 2023.
 </em></small>
 
 
@@ -289,8 +289,8 @@ Other SGD learning rate schedules have similar loss curves to the `liblinear` re
 ![
 **A.** Distribution across genes of the number of nonzero coefficients included in best-performing LASSO logistic regression models. Violin plot density estimations are clipped at the ends of the observed data range, and boxes show the median/IQR.
 **B.** Distribution across genes of the sum of model coefficient weights for best-performing LASSO logistic regression models.
-**C.** Decomposition of loss function for models fit using `liblinear` across regularization levels.
-**D.** Decomposition of loss function for models fit using SGD across regularization levels.
+**C.** Decomposition of loss function for models fit using `liblinear` across regularization levels. 0 values on the y-axis are rounded up to machine epsilon; i.e. 2.22 x 10^-16^.
+**D.** Decomposition of loss function for models fit using SGD across regularization levels. 0 values on the y-axis are rounded up to machine epsilon; i.e. 2.22 x 10^-16^.
 ](images/figure_3.png){#fig:optimizer_coefs width="100%"}
 
 
@@ -342,7 +342,7 @@ This research was supported in part by the University of Pittsburgh Center for R
 
 ![Sum of absolute value of coefficients + 1 for KRAS mutation prediction using SGD and `liblinear` optimizers, with varying learning rate schedules for SGD. Similar to the figures in the main paper, the `liblinear` x-axis represents the inverse of the $C$ regularization parameter; SGD x-axes represent the untransformed $\alpha$ parameter.](images/supp_figure_3.png){#fig:coef_weights_lr tag="S3" width="100%" .page_break_before}
 
-![Decomposition of loss function into data loss and L1 penalty components for KRAS mutation prediction using SGD optimizer, across regularization levels, using varying learning rate schedulers.](images/supp_figure_4.png){#fig:loss_lr tag="S4" width="100%" .page_break_before}
+![Decomposition of loss function into data loss and L1 penalty components for KRAS mutation prediction using SGD optimizer, across regularization levels, using varying learning rate schedulers. 0 values on the y-axis are rounded up to machine epsilon, i.e. 2.22 x 10^-16^.](images/supp_figure_4.png){#fig:loss_lr tag="S4" width="100%" .page_break_before}
 
 
 
