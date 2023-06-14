@@ -9,10 +9,10 @@
 We applied two different implementations of LASSO logistic regression implemented in Python’s scikit-learn package, using two different optimization approaches (coordinate descent and stochastic gradient descent), to predict driver mutation presence or absence from gene expression across 84 pan-cancer driver genes.
 For varying levels of regularization, we compared performance and model sparsity between optimizers.
 
-After model selection and tuning, we found that coordinate descent (implemented in the `liblinear` library) and SGD tended to perform comparably after model selection and tuning.
-SGD models required tuning of the learning rate to perform well, but generally resisted overfitting as regularization strength decreased and model complexity increased.
-`liblinear` models tended to be less robust to overfitting for lower regularization strengths, but did not require selection of a learning rate parameter.
-We believe that the choice of optimizers should be clearly reported as a part of the model selection and validation process, to allow readers and reviewers to better understand the context in which results have been generated.
+After model selection and tuning, we found that coordinate descent (implemented in the `liblinear` library) and SGD tended to perform comparably.
+`liblinear` models required more extensive tuning of regularization strength, performing best for high model sparsities (more nonzero coefficients), but did not require selection of a learning rate parameter.
+SGD models required tuning of the learning rate to perform well, but generally performed more robustly across different model sparsities as regularization strength decreased.
+Given these tradeoffs, we believe that the choice of optimizers should be clearly reported as a part of the model selection and validation process, to allow readers and reviewers to better understand the context in which results have been generated.
 
 The Github repository with the source code for the analyses can be found [here.](https://github.com/greenelab/pancancer-evaluation/tree/master/01_stratified_classification)
 
