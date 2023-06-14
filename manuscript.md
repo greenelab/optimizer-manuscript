@@ -6,7 +6,7 @@ keywords:
 - cancer genomics
 - optimization
 lang: en-US
-date-meta: '2023-06-12'
+date-meta: '2023-06-14'
 author-meta:
 - Jake Crawford
 - Casey S. Greene
@@ -21,11 +21,11 @@ header-includes: |
   <meta name="citation_title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
   <meta property="og:title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
   <meta property="twitter:title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
-  <meta name="dc.date" content="2023-06-12" />
-  <meta name="citation_publication_date" content="2023-06-12" />
-  <meta property="article:published_time" content="2023-06-12" />
-  <meta name="dc.modified" content="2023-06-12T20:00:13+00:00" />
-  <meta property="article:modified_time" content="2023-06-12T20:00:13+00:00" />
+  <meta name="dc.date" content="2023-06-14" />
+  <meta name="citation_publication_date" content="2023-06-14" />
+  <meta property="article:published_time" content="2023-06-14" />
+  <meta name="dc.modified" content="2023-06-14T17:45:24+00:00" />
+  <meta property="article:modified_time" content="2023-06-14T17:45:24+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -47,9 +47,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://greenelab.github.io/optimizer-manuscript/" />
   <meta name="citation_pdf_url" content="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/dc0ba8e429fcc9cc4dc6e06328d692b9679d7263/" />
-  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/dc0ba8e429fcc9cc4dc6e06328d692b9679d7263/" />
-  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/dc0ba8e429fcc9cc4dc6e06328d692b9679d7263/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/0ad295aa566bdda3c722a9e67e2afb08d2ee4565/" />
+  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/0ad295aa566bdda3c722a9e67e2afb08d2ee4565/" />
+  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/0ad295aa566bdda3c722a9e67e2afb08d2ee4565/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -71,10 +71,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/optimizer-manuscript/v/dc0ba8e429fcc9cc4dc6e06328d692b9679d7263/))
+([permalink](https://greenelab.github.io/optimizer-manuscript/v/0ad295aa566bdda3c722a9e67e2afb08d2ee4565/))
 was automatically generated
-from [greenelab/optimizer-manuscript@dc0ba8e](https://github.com/greenelab/optimizer-manuscript/tree/dc0ba8e429fcc9cc4dc6e06328d692b9679d7263)
-on June 12, 2023.
+from [greenelab/optimizer-manuscript@0ad295a](https://github.com/greenelab/optimizer-manuscript/tree/0ad295aa566bdda3c722a9e67e2afb08d2ee4565)
+on June 14, 2023.
 </em></small>
 
 
@@ -130,10 +130,10 @@ Across varying levels of regularization, we compared performance and model spars
 
 ### Results
 
-In general, we found that coordinate descent (implemented in the `liblinear` library) and SGD tended to perform comparably after model selection and tuning.
-However, SGD models generally resisted overfitting as regularization strength decreased and model complexity increased, and `liblinear` models tended to be less robust to overfitting.
-We also found that learning rate tuning on a held-out dataset was critical for SGD to achieve competitive performance with `liblinear`.
-We believe that the choice of optimizers should be clearly reported as a part of the model selection and validation process, to allow readers and reviewers to better understand the context in which results have been generated.
+After model selection and tuning, we found that coordinate descent (implemented in the `liblinear` library) and SGD tended to perform comparably.
+`liblinear` models required more extensive tuning of regularization strength, performing best for high model sparsities (more nonzero coefficients), but did not require selection of a learning rate parameter.
+SGD models required tuning of the learning rate to perform well, but generally performed more robustly across different model sparsities as regularization strength decreased.
+Given these tradeoffs, we believe that the choice of optimizers should be clearly reported as a part of the model selection and validation process, to allow readers and reviewers to better understand the context in which results have been generated.
 
 ### Availability and implementation
 
@@ -228,7 +228,7 @@ Unless otherwise specified, results for SGD in the main paper figures used the `
 
 ## Results {.page_break_before}
 
-### `liblinear` and SGD LASSO models perform comparably, but `liblinear` is prone to overfitting
+### `liblinear` and SGD LASSO models perform comparably, but `liblinear` is sensitive to regularization strength
 
 For each of the 125 driver genes from the Vogelstein et al. 2013 paper, we trained models to predict mutation status (presence or absence) from RNA-seq data, derived from the TCGA Pan-Cancer Atlas.
 For each optimizer, we trained LASSO logistic regression models across a variety of regularization parameters (see Methods for parameter range details), achieving a variety of different levels of model sparsity (Supplementary Figure {@fig:compare_sparsity}).
@@ -297,8 +297,8 @@ Other SGD learning rate schedules have similar loss curves to the `liblinear` re
 ## Discussion {.page_break_before}
 
 Our work shows that optimizer choice presents tradeoffs in model selection for cancer transcriptomics.
-We observed that LASSO logistic regression models for mutation status prediction fit using stochastic gradient descent tended to be robust to overfitting at low regularization levels, but they were highly sensitive to learning rate tuning.
-Coordinate descent implemented in `liblinear` did not require learning rate tuning, but generally resulted in overfitting as regularization strength decreased.
+We observed that LASSO logistic regression models for mutation status prediction fit using stochastic gradient descent were highly sensitive to learning rate tuning, but they tended to perform robustly across diverse levels of regularization and sparsity.
+Coordinate descent implemented in `liblinear` did not require learning rate tuning, but generally performed best for a narrow range of fairly sparse models, overfitting as regularization strength decreased.
 Tuning of regularization strength for `liblinear`, and learning rate (and regularization strength to a lesser degree) for SGD, are critical steps which must be considered as part of analysis pipelines.
 The sensitivity we observed to these details highlights the importance of reporting exactly what optimizer was used, and how the relevant hyperparameters were selected, in studies that use machine learning models for transcriptomic data.
 

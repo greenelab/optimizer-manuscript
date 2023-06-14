@@ -34,7 +34,8 @@ preprocessing
 Ras
 rtw
 scikit
-SGD
+sgd
+sparsities
 subtrain
 TCGA
 Thresholded
