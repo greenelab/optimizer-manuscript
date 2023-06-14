@@ -34,7 +34,7 @@ preprocessing
 Ras
 rtw
 scikit
-sgd
+SGD
 sparsities
 subtrain
 TCGA

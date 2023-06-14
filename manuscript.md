@@ -24,8 +24,8 @@ header-includes: |
   <meta name="dc.date" content="2023-06-14" />
   <meta name="citation_publication_date" content="2023-06-14" />
   <meta property="article:published_time" content="2023-06-14" />
-  <meta name="dc.modified" content="2023-06-14T17:45:24+00:00" />
-  <meta property="article:modified_time" content="2023-06-14T17:45:24+00:00" />
+  <meta name="dc.modified" content="2023-06-14T17:46:54+00:00" />
+  <meta property="article:modified_time" content="2023-06-14T17:46:54+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -47,9 +47,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://greenelab.github.io/optimizer-manuscript/" />
   <meta name="citation_pdf_url" content="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/0ad295aa566bdda3c722a9e67e2afb08d2ee4565/" />
-  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/0ad295aa566bdda3c722a9e67e2afb08d2ee4565/" />
-  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/0ad295aa566bdda3c722a9e67e2afb08d2ee4565/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/71a5892b794f63b9f871e7980d61d285a6956862/" />
+  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/71a5892b794f63b9f871e7980d61d285a6956862/" />
+  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/71a5892b794f63b9f871e7980d61d285a6956862/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -71,9 +71,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/optimizer-manuscript/v/0ad295aa566bdda3c722a9e67e2afb08d2ee4565/))
+([permalink](https://greenelab.github.io/optimizer-manuscript/v/71a5892b794f63b9f871e7980d61d285a6956862/))
 was automatically generated
-from [greenelab/optimizer-manuscript@0ad295a](https://github.com/greenelab/optimizer-manuscript/tree/0ad295aa566bdda3c722a9e67e2afb08d2ee4565)
+from [greenelab/optimizer-manuscript@71a5892](https://github.com/greenelab/optimizer-manuscript/tree/71a5892b794f63b9f871e7980d61d285a6956862)
 on June 14, 2023.
 </em></small>
 
