@@ -1,7 +1,7 @@
 # Output directory containing the formatted manuscript
 
 The [`gh-pages`](https://github.com/greenelab/optimizer-manuscript/tree/gh-pages) branch hosts the contents of this directory at <https://greenelab.github.io/optimizer-manuscript/>.
-The permalink for this webpage version is <https://greenelab.github.io/optimizer-manuscript/v/71a5892b794f63b9f871e7980d61d285a6956862/>.
+The permalink for this webpage version is <https://greenelab.github.io/optimizer-manuscript/v/17e2aaca4919ac1a5721ff3b585895d78ed9ed0b/>.
 To redirect to the permalink for the latest manuscript version at anytime, use the link <https://greenelab.github.io/optimizer-manuscript/v/freeze/>.
 
 ## Files
@@ -35,4 +35,4 @@ Verifying timestamps with the `ots verify` command requires running a local bitc
 ## Source
 
 The manuscripts in this directory were built from
-[`71a5892b794f63b9f871e7980d61d285a6956862`](https://github.com/greenelab/optimizer-manuscript/commit/71a5892b794f63b9f871e7980d61d285a6956862).
+[`17e2aaca4919ac1a5721ff3b585895d78ed9ed0b`](https://github.com/greenelab/optimizer-manuscript/commit/17e2aaca4919ac1a5721ff3b585895d78ed9ed0b).
