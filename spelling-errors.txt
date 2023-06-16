@@ -1,6 +1,7 @@
 arxiv
 AUPR
 cgreene
+Chikina
 coef
 coefs
 covariates
@@ -8,7 +9,7 @@ dataset
 datasets
 Figshare
 GDC
-Genomic
+genomic
 GISTIC
 GreeneScientist
 HTC
@@ -19,6 +20,7 @@ IQR
 jjc
 KRAS
 learn’s
+mchikina
 NCI
 omics
 optimizers

@@ -6,9 +6,10 @@ keywords:
 - cancer genomics
 - optimization
 lang: en-US
-date-meta: '2023-06-14'
+date-meta: '2023-06-16'
 author-meta:
 - Jake Crawford
+- Maria Chikina
 - Casey S. Greene
 header-includes: |
   <!--
@@ -21,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
   <meta property="og:title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
   <meta property="twitter:title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
-  <meta name="dc.date" content="2023-06-14" />
-  <meta name="citation_publication_date" content="2023-06-14" />
-  <meta property="article:published_time" content="2023-06-14" />
-  <meta name="dc.modified" content="2023-06-14T17:46:54+00:00" />
-  <meta property="article:modified_time" content="2023-06-14T17:46:54+00:00" />
+  <meta name="dc.date" content="2023-06-16" />
+  <meta name="citation_publication_date" content="2023-06-16" />
+  <meta property="article:published_time" content="2023-06-16" />
+  <meta name="dc.modified" content="2023-06-16T18:42:57+00:00" />
+  <meta property="article:modified_time" content="2023-06-16T18:42:57+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -36,6 +37,9 @@ header-includes: |
   <meta name="citation_author_institution" content="Genomics and Computational Biology Graduate Group, Perelman School of Medicine, University of Pennsylvania, Philadelphia, PA, USA" />
   <meta name="citation_author_orcid" content="0000-0001-6207-0782" />
   <meta name="twitter:creator" content="@jjc2718" />
+  <meta name="citation_author" content="Maria Chikina" />
+  <meta name="citation_author_institution" content="Department of Computational and Systems Biology, School of Medicine, University of Pittsburgh, Pittsburgh, PA, USA" />
+  <meta name="citation_author_orcid" content="0000-0003-2550-5403" />
   <meta name="citation_author" content="Casey S. Greene" />
   <meta name="citation_author_institution" content="Department of Biochemistry and Molecular Genetics, University of Colorado School of Medicine, Aurora, CO, USA" />
   <meta name="citation_author_institution" content="Center for Health AI, University of Colorado School of Medicine, Aurora, CO, USA" />
@@ -47,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://greenelab.github.io/optimizer-manuscript/" />
   <meta name="citation_pdf_url" content="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/71a5892b794f63b9f871e7980d61d285a6956862/" />
-  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/71a5892b794f63b9f871e7980d61d285a6956862/" />
-  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/71a5892b794f63b9f871e7980d61d285a6956862/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/17e2aaca4919ac1a5721ff3b585895d78ed9ed0b/" />
+  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/17e2aaca4919ac1a5721ff3b585895d78ed9ed0b/" />
+  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/17e2aaca4919ac1a5721ff3b585895d78ed9ed0b/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -71,10 +75,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/optimizer-manuscript/v/71a5892b794f63b9f871e7980d61d285a6956862/))
+([permalink](https://greenelab.github.io/optimizer-manuscript/v/17e2aaca4919ac1a5721ff3b585895d78ed9ed0b/))
 was automatically generated
-from [greenelab/optimizer-manuscript@71a5892](https://github.com/greenelab/optimizer-manuscript/tree/71a5892b794f63b9f871e7980d61d285a6956862)
-on June 14, 2023.
+from [greenelab/optimizer-manuscript@17e2aac](https://github.com/greenelab/optimizer-manuscript/tree/17e2aaca4919ac1a5721ff3b585895d78ed9ed0b)
+on June 16, 2023.
 </em></small>
 
 
@@ -94,6 +98,17 @@ on June 14, 2023.
     <br>
   <small>
      Genomics and Computational Biology Graduate Group, Perelman School of Medicine, University of Pennsylvania, Philadelphia, PA, USA
+  </small>
+
++ **Maria Chikina**
+  <br>
+    ![ORCID icon](images/orcid.svg){.inline_icon width=16 height=16}
+    [0000-0003-2550-5403](https://orcid.org/0000-0003-2550-5403)
+    · ![GitHub icon](images/github.svg){.inline_icon width=16 height=16}
+    [mchikina](https://github.com/mchikina)
+    <br>
+  <small>
+     Department of Computational and Systems Biology, School of Medicine, University of Pittsburgh, Pittsburgh, PA, USA
   </small>
 
 + **Casey S. Greene**
