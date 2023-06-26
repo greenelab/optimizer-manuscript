@@ -9,7 +9,7 @@ dataset
 datasets
 Figshare
 GDC
-genomic
+Genomic
 GISTIC
 GreeneScientist
 HTC

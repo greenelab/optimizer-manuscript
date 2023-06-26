@@ -6,7 +6,7 @@ keywords:
 - cancer genomics
 - optimization
 lang: en-US
-date-meta: '2023-06-16'
+date-meta: '2023-06-26'
 author-meta:
 - Jake Crawford
 - Maria Chikina
@@ -22,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
   <meta property="og:title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
   <meta property="twitter:title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
-  <meta name="dc.date" content="2023-06-16" />
-  <meta name="citation_publication_date" content="2023-06-16" />
-  <meta property="article:published_time" content="2023-06-16" />
-  <meta name="dc.modified" content="2023-06-16T18:42:57+00:00" />
-  <meta property="article:modified_time" content="2023-06-16T18:42:57+00:00" />
+  <meta name="dc.date" content="2023-06-26" />
+  <meta name="citation_publication_date" content="2023-06-26" />
+  <meta property="article:published_time" content="2023-06-26" />
+  <meta name="dc.modified" content="2023-06-26T16:35:41+00:00" />
+  <meta property="article:modified_time" content="2023-06-26T16:35:41+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://greenelab.github.io/optimizer-manuscript/" />
   <meta name="citation_pdf_url" content="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/17e2aaca4919ac1a5721ff3b585895d78ed9ed0b/" />
-  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/17e2aaca4919ac1a5721ff3b585895d78ed9ed0b/" />
-  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/17e2aaca4919ac1a5721ff3b585895d78ed9ed0b/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/74f741f32caa778c69c488aae504f24009297fc3/" />
+  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/74f741f32caa778c69c488aae504f24009297fc3/" />
+  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/74f741f32caa778c69c488aae504f24009297fc3/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,10 +75,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/optimizer-manuscript/v/17e2aaca4919ac1a5721ff3b585895d78ed9ed0b/))
+([permalink](https://greenelab.github.io/optimizer-manuscript/v/74f741f32caa778c69c488aae504f24009297fc3/))
 was automatically generated
-from [greenelab/optimizer-manuscript@17e2aac](https://github.com/greenelab/optimizer-manuscript/tree/17e2aaca4919ac1a5721ff3b585895d78ed9ed0b)
-on June 16, 2023.
+from [greenelab/optimizer-manuscript@74f741f](https://github.com/greenelab/optimizer-manuscript/tree/74f741f32caa778c69c488aae504f24009297fc3)
+on June 26, 2023.
 </em></small>
 
 
