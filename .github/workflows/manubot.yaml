@@ -1,4 +1,6 @@
 name: Manubot
+env:
+  BUILD_DOCX: ${{ vars.BUILD_DOCX }}
 on:
   push:
     branches:
