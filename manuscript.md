@@ -6,7 +6,7 @@ keywords:
 - cancer genomics
 - optimization
 lang: en-US
-date-meta: '2023-06-26'
+date-meta: '2023-07-24'
 author-meta:
 - Jake Crawford
 - Maria Chikina
@@ -22,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
   <meta property="og:title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
   <meta property="twitter:title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
-  <meta name="dc.date" content="2023-06-26" />
-  <meta name="citation_publication_date" content="2023-06-26" />
-  <meta property="article:published_time" content="2023-06-26" />
-  <meta name="dc.modified" content="2023-06-26T16:35:41+00:00" />
-  <meta property="article:modified_time" content="2023-06-26T16:35:41+00:00" />
+  <meta name="dc.date" content="2023-07-24" />
+  <meta name="citation_publication_date" content="2023-07-24" />
+  <meta property="article:published_time" content="2023-07-24" />
+  <meta name="dc.modified" content="2023-07-24T15:55:14+00:00" />
+  <meta property="article:modified_time" content="2023-07-24T15:55:14+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://greenelab.github.io/optimizer-manuscript/" />
   <meta name="citation_pdf_url" content="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/74f741f32caa778c69c488aae504f24009297fc3/" />
-  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/74f741f32caa778c69c488aae504f24009297fc3/" />
-  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/74f741f32caa778c69c488aae504f24009297fc3/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/22f020aa1c028db99a38708773a1592e9203ce4c/" />
+  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/22f020aa1c028db99a38708773a1592e9203ce4c/" />
+  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/22f020aa1c028db99a38708773a1592e9203ce4c/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,10 +75,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/optimizer-manuscript/v/74f741f32caa778c69c488aae504f24009297fc3/))
+([permalink](https://greenelab.github.io/optimizer-manuscript/v/22f020aa1c028db99a38708773a1592e9203ce4c/))
 was automatically generated
-from [greenelab/optimizer-manuscript@74f741f](https://github.com/greenelab/optimizer-manuscript/tree/74f741f32caa778c69c488aae504f24009297fc3)
-on June 26, 2023.
+from [greenelab/optimizer-manuscript@22f020a](https://github.com/greenelab/optimizer-manuscript/tree/22f020aa1c028db99a38708773a1592e9203ce4c)
+on July 24, 2023.
 </em></small>
 
 
@@ -185,7 +185,7 @@ We removed hypermutated samples, defined as two or more standard deviations abov
 Any sample with either a non-silent somatic variant or a copy number variation (copy number gain in the target gene for oncogenes and copy number loss in the target gene for tumor suppressor genes) was included in the positive set; all remaining samples were considered negative for mutation in the target gene.
 
 RNA sequencing data for TCGA was downloaded from GDC at the same link provided above for the Pan-Cancer Atlas.
-We discarded non-protein-coding genes and genes that failed to map, and removed tumors that were measured from multiple sites.
+We discarded non-protein-coding genes and genes that failed to map and removed tumors that were measured from multiple sites.
 After filtering to remove hypermutated samples and taking the intersection of samples with both mutation and gene expression data, 9074 total TCGA samples remained.
 
 ### Cancer gene set construction
