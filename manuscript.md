@@ -6,7 +6,7 @@ keywords:
 - cancer genomics
 - optimization
 lang: en-US
-date-meta: '2023-07-24'
+date-meta: '2023-10-31'
 author-meta:
 - Jake Crawford
 - Maria Chikina
@@ -22,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
   <meta property="og:title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
   <meta property="twitter:title" content="Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction" />
-  <meta name="dc.date" content="2023-07-24" />
-  <meta name="citation_publication_date" content="2023-07-24" />
-  <meta property="article:published_time" content="2023-07-24" />
-  <meta name="dc.modified" content="2023-07-24T16:51:33+00:00" />
-  <meta property="article:modified_time" content="2023-07-24T16:51:33+00:00" />
+  <meta name="dc.date" content="2023-10-31" />
+  <meta name="citation_publication_date" content="2023-10-31" />
+  <meta property="article:published_time" content="2023-10-31" />
+  <meta name="dc.modified" content="2023-10-31T20:30:19+00:00" />
+  <meta property="article:modified_time" content="2023-10-31T20:30:19+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -41,7 +41,7 @@ header-includes: |
   <meta name="citation_author_institution" content="Department of Computational and Systems Biology, School of Medicine, University of Pittsburgh, Pittsburgh, PA, USA" />
   <meta name="citation_author_orcid" content="0000-0003-2550-5403" />
   <meta name="citation_author" content="Casey S. Greene" />
-  <meta name="citation_author_institution" content="Department of Biochemistry and Molecular Genetics, University of Colorado School of Medicine, Aurora, CO, USA" />
+  <meta name="citation_author_institution" content="Department of Biomedical Informatics, University of Colorado School of Medicine, Aurora, CO, USA" />
   <meta name="citation_author_institution" content="Center for Health AI, University of Colorado School of Medicine, Aurora, CO, USA" />
   <meta name="citation_author_orcid" content="0000-0001-8713-9213" />
   <meta name="twitter:creator" content="@GreeneScientist" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://greenelab.github.io/optimizer-manuscript/" />
   <meta name="citation_pdf_url" content="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://greenelab.github.io/optimizer-manuscript/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/bfb085ad13c3f4a57f4834174395e65b816f3a6c/" />
-  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/bfb085ad13c3f4a57f4834174395e65b816f3a6c/" />
-  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/bfb085ad13c3f4a57f4834174395e65b816f3a6c/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://greenelab.github.io/optimizer-manuscript/v/30fc05134866654c06aae0d1c4b710a3c2f9cb44/" />
+  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/30fc05134866654c06aae0d1c4b710a3c2f9cb44/" />
+  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/optimizer-manuscript/v/30fc05134866654c06aae0d1c4b710a3c2f9cb44/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,10 +75,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/optimizer-manuscript/v/bfb085ad13c3f4a57f4834174395e65b816f3a6c/))
+([permalink](https://greenelab.github.io/optimizer-manuscript/v/30fc05134866654c06aae0d1c4b710a3c2f9cb44/))
 was automatically generated
-from [greenelab/optimizer-manuscript@bfb085a](https://github.com/greenelab/optimizer-manuscript/tree/bfb085ad13c3f4a57f4834174395e65b816f3a6c)
-on July 24, 2023.
+from [greenelab/optimizer-manuscript@30fc051](https://github.com/greenelab/optimizer-manuscript/tree/30fc05134866654c06aae0d1c4b710a3c2f9cb44)
+on October 31, 2023.
 </em></small>
 
 
@@ -121,7 +121,7 @@ on July 24, 2023.
     [GreeneScientist](https://twitter.com/GreeneScientist)
     <br>
   <small>
-     Department of Biochemistry and Molecular Genetics, University of Colorado School of Medicine, Aurora, CO, USA; Center for Health AI, University of Colorado School of Medicine, Aurora, CO, USA
+     Department of Biomedical Informatics, University of Colorado School of Medicine, Aurora, CO, USA; Center for Health AI, University of Colorado School of Medicine, Aurora, CO, USA
   </small>
 
 
