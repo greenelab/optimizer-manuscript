@@ -8,13 +8,13 @@
       "optimization"
     ],
     "lang": "en-US",
-    "date-meta": "2023-10-31",
+    "date-meta": "2023-11-12",
     "author-meta": [
       "Jake Crawford",
       "Maria Chikina",
       "Casey S. Greene"
     ],
-    "header-includes": "<!--\nManubot generated metadata rendered from header-includes-template.html.\nSuggest improvements at https://github.com/manubot/manubot/blob/main/manubot/process/header-includes-template.html\n-->\n<meta name=\"dc.format\" content=\"text/html\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta name=\"dc.title\" content=\"Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction\" />\n<meta name=\"citation_title\" content=\"Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction\" />\n<meta property=\"og:title\" content=\"Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction\" />\n<meta property=\"twitter:title\" content=\"Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction\" />\n<meta name=\"dc.date\" content=\"2023-10-31\" />\n<meta name=\"citation_publication_date\" content=\"2023-10-31\" />\n<meta property=\"article:published_time\" content=\"2023-10-31\" />\n<meta name=\"dc.modified\" content=\"2023-10-31T20:30:19+00:00\" />\n<meta property=\"article:modified_time\" content=\"2023-10-31T20:30:19+00:00\" />\n<meta name=\"dc.language\" content=\"en-US\" />\n<meta name=\"citation_language\" content=\"en-US\" />\n<meta name=\"dc.relation.ispartof\" content=\"Manubot\" />\n<meta name=\"dc.publisher\" content=\"Manubot\" />\n<meta name=\"citation_journal_title\" content=\"Manubot\" />\n<meta name=\"citation_technical_report_institution\" content=\"Manubot\" />\n<meta name=\"citation_author\" content=\"Jake Crawford\" />\n<meta name=\"citation_author_institution\" content=\"Genomics and Computational Biology Graduate Group, Perelman School of Medicine, University of Pennsylvania, Philadelphia, PA, USA\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0001-6207-0782\" />\n<meta name=\"twitter:creator\" content=\"@jjc2718\" />\n<meta name=\"citation_author\" content=\"Maria Chikina\" />\n<meta name=\"citation_author_institution\" content=\"Department of Computational and Systems Biology, School of Medicine, University of Pittsburgh, Pittsburgh, PA, USA\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0003-2550-5403\" />\n<meta name=\"citation_author\" content=\"Casey S. Greene\" />\n<meta name=\"citation_author_institution\" content=\"Department of Biomedical Informatics, University of Colorado School of Medicine, Aurora, CO, USA\" />\n<meta name=\"citation_author_institution\" content=\"Center for Health AI, University of Colorado School of Medicine, Aurora, CO, USA\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0001-8713-9213\" />\n<meta name=\"twitter:creator\" content=\"@GreeneScientist\" />\n<link rel=\"canonical\" href=\"https://greenelab.github.io/optimizer-manuscript/\" />\n<meta property=\"og:url\" content=\"https://greenelab.github.io/optimizer-manuscript/\" />\n<meta property=\"twitter:url\" content=\"https://greenelab.github.io/optimizer-manuscript/\" />\n<meta name=\"citation_fulltext_html_url\" content=\"https://greenelab.github.io/optimizer-manuscript/\" />\n<meta name=\"citation_pdf_url\" content=\"https://greenelab.github.io/optimizer-manuscript/manuscript.pdf\" />\n<link rel=\"alternate\" type=\"application/pdf\" href=\"https://greenelab.github.io/optimizer-manuscript/manuscript.pdf\" />\n<link rel=\"alternate\" type=\"text/html\" href=\"https://greenelab.github.io/optimizer-manuscript/v/30fc05134866654c06aae0d1c4b710a3c2f9cb44/\" />\n<meta name=\"manubot_html_url_versioned\" content=\"https://greenelab.github.io/optimizer-manuscript/v/30fc05134866654c06aae0d1c4b710a3c2f9cb44/\" />\n<meta name=\"manubot_pdf_url_versioned\" content=\"https://greenelab.github.io/optimizer-manuscript/v/30fc05134866654c06aae0d1c4b710a3c2f9cb44/manuscript.pdf\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"twitter:card\" content=\"summary_large_image\" />\n<link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"https://manubot.org/favicon-192x192.png\" />\n<link rel=\"mask-icon\" href=\"https://manubot.org/safari-pinned-tab.svg\" color=\"#ad1457\" />\n<meta name=\"theme-color\" content=\"#ad1457\" />\n<!-- end Manubot generated metadata -->\n",
+    "header-includes": "<!--\nManubot generated metadata rendered from header-includes-template.html.\nSuggest improvements at https://github.com/manubot/manubot/blob/main/manubot/process/header-includes-template.html\n-->\n<meta name=\"dc.format\" content=\"text/html\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta name=\"dc.title\" content=\"Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction\" />\n<meta name=\"citation_title\" content=\"Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction\" />\n<meta property=\"og:title\" content=\"Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction\" />\n<meta property=\"twitter:title\" content=\"Optimizer&#39;s dilemma: optimization strongly influences model selection in transcriptomic prediction\" />\n<meta name=\"dc.date\" content=\"2023-11-12\" />\n<meta name=\"citation_publication_date\" content=\"2023-11-12\" />\n<meta property=\"article:published_time\" content=\"2023-11-12\" />\n<meta name=\"dc.modified\" content=\"2023-11-12T18:22:18+00:00\" />\n<meta property=\"article:modified_time\" content=\"2023-11-12T18:22:18+00:00\" />\n<meta name=\"dc.language\" content=\"en-US\" />\n<meta name=\"citation_language\" content=\"en-US\" />\n<meta name=\"dc.relation.ispartof\" content=\"Manubot\" />\n<meta name=\"dc.publisher\" content=\"Manubot\" />\n<meta name=\"citation_journal_title\" content=\"Manubot\" />\n<meta name=\"citation_technical_report_institution\" content=\"Manubot\" />\n<meta name=\"citation_author\" content=\"Jake Crawford\" />\n<meta name=\"citation_author_institution\" content=\"Genomics and Computational Biology Graduate Group, Perelman School of Medicine, University of Pennsylvania, Philadelphia, PA, USA\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0001-6207-0782\" />\n<meta name=\"twitter:creator\" content=\"@jjc2718\" />\n<meta name=\"citation_author\" content=\"Maria Chikina\" />\n<meta name=\"citation_author_institution\" content=\"Department of Computational and Systems Biology, School of Medicine, University of Pittsburgh, Pittsburgh, PA, USA\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0003-2550-5403\" />\n<meta name=\"citation_author\" content=\"Casey S. Greene\" />\n<meta name=\"citation_author_institution\" content=\"Department of Biomedical Informatics, University of Colorado School of Medicine, Aurora, CO, USA\" />\n<meta name=\"citation_author_institution\" content=\"Center for Health AI, University of Colorado School of Medicine, Aurora, CO, USA\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0001-8713-9213\" />\n<meta name=\"twitter:creator\" content=\"@GreeneScientist\" />\n<link rel=\"canonical\" href=\"https://greenelab.github.io/optimizer-manuscript/\" />\n<meta property=\"og:url\" content=\"https://greenelab.github.io/optimizer-manuscript/\" />\n<meta property=\"twitter:url\" content=\"https://greenelab.github.io/optimizer-manuscript/\" />\n<meta name=\"citation_fulltext_html_url\" content=\"https://greenelab.github.io/optimizer-manuscript/\" />\n<meta name=\"citation_pdf_url\" content=\"https://greenelab.github.io/optimizer-manuscript/manuscript.pdf\" />\n<link rel=\"alternate\" type=\"application/pdf\" href=\"https://greenelab.github.io/optimizer-manuscript/manuscript.pdf\" />\n<link rel=\"alternate\" type=\"text/html\" href=\"https://greenelab.github.io/optimizer-manuscript/v/f55213d46e14f756b14b7d1f8fd224013c41e876/\" />\n<meta name=\"manubot_html_url_versioned\" content=\"https://greenelab.github.io/optimizer-manuscript/v/f55213d46e14f756b14b7d1f8fd224013c41e876/\" />\n<meta name=\"manubot_pdf_url_versioned\" content=\"https://greenelab.github.io/optimizer-manuscript/v/f55213d46e14f756b14b7d1f8fd224013c41e876/manuscript.pdf\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"twitter:card\" content=\"summary_large_image\" />\n<link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"https://manubot.org/favicon-192x192.png\" />\n<link rel=\"mask-icon\" href=\"https://manubot.org/safari-pinned-tab.svg\" color=\"#ad1457\" />\n<meta name=\"theme-color\" content=\"#ad1457\" />\n<!-- end Manubot generated metadata -->\n",
     "bibliography": [
       "content/manual-references.json"
     ],
@@ -24,10 +24,10 @@
     "manubot-clear-requests-cache": false
   },
   "manubot": {
-    "date": "2023-10-31",
-    "date_long": "October 31, 2023",
-    "generated": "2023-10-31T20:30:19+00:00",
-    "generated_date_long": "October 31, 2023",
+    "date": "2023-11-12",
+    "date_long": "November 12, 2023",
+    "generated": "2023-11-12T18:22:18+00:00",
+    "generated_date_long": "November 12, 2023",
     "randomize_author_order": false,
     "authors": [
       {
@@ -97,19 +97,19 @@
       "repo_slug": "greenelab/optimizer-manuscript",
       "repo_owner": "greenelab",
       "repo_name": "optimizer-manuscript",
-      "commit": "30fc05134866654c06aae0d1c4b710a3c2f9cb44",
-      "triggering_commit": "30fc05134866654c06aae0d1c4b710a3c2f9cb44",
-      "build_url": "https://github.com/greenelab/optimizer-manuscript/commit/30fc05134866654c06aae0d1c4b710a3c2f9cb44/checks",
-      "job_url": "https://github.com/greenelab/optimizer-manuscript/actions/runs/6712107862"
+      "commit": "f55213d46e14f756b14b7d1f8fd224013c41e876",
+      "triggering_commit": "f55213d46e14f756b14b7d1f8fd224013c41e876",
+      "build_url": "https://github.com/greenelab/optimizer-manuscript/commit/f55213d46e14f756b14b7d1f8fd224013c41e876/checks",
+      "job_url": "https://github.com/greenelab/optimizer-manuscript/actions/runs/6842380032"
     },
     "html_url": "https://greenelab.github.io/optimizer-manuscript/",
     "pdf_url": "https://greenelab.github.io/optimizer-manuscript/manuscript.pdf",
-    "html_url_versioned": "https://greenelab.github.io/optimizer-manuscript/v/30fc05134866654c06aae0d1c4b710a3c2f9cb44/",
-    "pdf_url_versioned": "https://greenelab.github.io/optimizer-manuscript/v/30fc05134866654c06aae0d1c4b710a3c2f9cb44/manuscript.pdf",
+    "html_url_versioned": "https://greenelab.github.io/optimizer-manuscript/v/f55213d46e14f756b14b7d1f8fd224013c41e876/",
+    "pdf_url_versioned": "https://greenelab.github.io/optimizer-manuscript/v/f55213d46e14f756b14b7d1f8fd224013c41e876/manuscript.pdf",
     "manubot_version": "0.5.5",
     "rootstock_commit": "f3e0520060162f71f0950ea88d44de526d241ad1",
     "manuscript_stats": {
-      "word_count": 4348
+      "word_count": 5589
     }
   }
 }
